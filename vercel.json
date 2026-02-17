@@ -1,0 +1,46 @@
+{
+    "version": 2,
+    "framework": null,
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.7.2"
+        }
+    },
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/public/images/$1"
+        },
+        {
+            "src": "/favicon\\.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
+            "src": "/favicon\\.svg",
+            "dest": "/public/favicon.svg"
+        },
+        {
+            "src": "/apple-touch-icon\\.png",
+            "dest": "/public/apple-touch-icon.png"
+        },
+        {
+            "src": "/logo\\.svg",
+            "dest": "/public/logo.svg"
+        },
+        {
+            "src": "/robots\\.txt",
+            "dest": "/public/robots.txt"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "outputDirectory": "public",
+    "buildCommand": "composer install --no-dev --optimize-autoloader && npm install && npm run build",
+    "installCommand": "npm install"
+}
