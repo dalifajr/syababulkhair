@@ -39,11 +39,31 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
-        @viteReactRefresh
+        <!-- Debugging Script: Show JS Errors on Screen -->
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;background:red;color:white;padding:20px;z-index:9999;font-family:monospace;white-space:pre-wrap;';
+            errorDiv.textContent = 'JS Error: ' + message + '\nAt: ' + source + ':' + lineno + ':' + colno + '\n' + (error ? error.stack : '');
+            document.body.appendChild(errorDiv);
+            return false;
+        };
+        window.onunhandledrejection = function(event) {
+             const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = 'position:fixed;top:50%;left:0;width:100%;background:orange;color:white;padding:20px;z-index:9999;font-family:monospace;white-space:pre-wrap;';
+            errorDiv.textContent = 'Unhandled Promise Rejection: ' + event.reason;
+            document.body.appendChild(errorDiv);
+        };
+    </script>
+
+    @viteReactRefresh
         @vite(['resources/css/app.css', 'resources/js/app.tsx'])
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
+        <div id="debug-loader" style="background: #f0fdf4; color: #166534; padding: 10px; text-align: center; border-bottom: 1px solid #bbf7d0; font-family: sans-serif; font-size: 14px;">
+            System Status: Loading Application... (If this persists, JS has crashed)
+        </div>
         @inertia
     </body>
 </html>
