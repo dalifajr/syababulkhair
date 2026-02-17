@@ -56,15 +56,6 @@ if (isset($_SERVER['VERCEL_REGION']) || isset($_ENV['VERCEL_REGION'])) {
 // ----------------------------
 
 // Handle the request
-try {
-    $minApp = $app; // Keep reference
-    $minApp->handleRequest(Request::capture());
-} catch (\Throwable $e) {
-    http_response_code(500);
-    echo "<h1>Error 500: Deployment Debug (Phase 2)</h1>";
-    echo "<p><strong>Message:</strong> " . $e->getMessage() . "</p>";
-    echo "<p><strong>File:</strong> " . $e->getFile() . ":" . $e->getLine() . "</p>";
-    echo "<pre>" . $e->getTraceAsString() . "</pre>";
-    exit(1);
-}
+// Handle the request
+$app->handleRequest(Request::capture());
 
