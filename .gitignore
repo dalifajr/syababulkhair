@@ -1,5 +1,6 @@
 /.phpunit.cache
 /bootstrap/ssr
+/bootstrap/cache/*.php
 /node_modules
 # /public/build  -- diaktifkan agar hasil build Vite ter-commit untuk Vercel
 /public/hot
