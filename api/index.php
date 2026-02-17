@@ -36,16 +36,26 @@ if (isset($_SERVER['VERCEL_REGION']) || isset($_ENV['VERCEL_REGION'])) {
     }
     
     // Force logs to stderr so they appear in Vercel dashboard
+    // Force logs to stderr so they appear in Vercel dashboard
     $_ENV['LOG_CHANNEL'] = 'stderr';
     $_SERVER['LOG_CHANNEL'] = 'stderr';
 }
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+try {
+    $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-$request = Illuminate\Http\Request::capture();
+    $request = Illuminate\Http\Request::capture();
 
-$response = $kernel->handle($request);
+    $response = $kernel->handle($request);
 
-$response->send();
+    $response->send();
 
-$kernel->terminate($request, $response);
+    $kernel->terminate($request, $response);
+} catch (\Throwable $e) {
+    http_response_code(500);
+    echo "<h1>Error 500: Deployment Debug</h1>";
+    echo "<p><strong>Message:</strong> " . $e->getMessage() . "</p>";
+    echo "<p><strong>File:</strong> " . $e->getFile() . ":" . $e->getLine() . "</p>";
+    echo "<pre>" . $e->getTraceAsString() . "</pre>";
+    exit(1);
+}
