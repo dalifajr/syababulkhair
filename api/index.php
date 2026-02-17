@@ -21,6 +21,20 @@ if (isset($_SERVER['VERCEL_REGION']) || isset($_ENV['VERCEL_REGION'])) {
     $path = '/tmp/storage';
     $app->useStoragePath($path);
     
+    // 2. Cache Path Fix (Read-only bootstrap/cache)
+    // Laravel tries to write to these files. On Vercel, bootstrap/cache is read-only.
+    // We redirect them to /tmp which is writable.
+    $cachePath = '/tmp/cache';
+    if (!is_dir($cachePath)) {
+        mkdir($cachePath, 0755, true);
+    }
+    
+    $_ENV['APP_SERVICES_CACHE'] = $cachePath . '/services.php';
+    $_ENV['APP_PACKAGES_CACHE'] = $cachePath . '/packages.php';
+    $_ENV['APP_CONFIG_CACHE'] = $cachePath . '/config.php';
+    $_ENV['APP_ROUTES_CACHE'] = $cachePath . '/routes.php';
+    $_ENV['APP_EVENTS_CACHE'] = $cachePath . '/events.php';
+    
     // Ensure directories exist
     $dirs = [
         $path . '/framework/views',
