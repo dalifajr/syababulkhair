@@ -34,6 +34,10 @@ if (isset($_SERVER['VERCEL_REGION']) || isset($_ENV['VERCEL_REGION'])) {
     if (!is_dir($path . '/logs')) {
         mkdir($path . '/logs', 0755, true);
     }
+    
+    // Force logs to stderr so they appear in Vercel dashboard
+    $_ENV['LOG_CHANNEL'] = 'stderr';
+    $_SERVER['LOG_CHANNEL'] = 'stderr';
 }
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
