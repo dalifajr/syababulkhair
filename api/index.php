@@ -4,6 +4,13 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+// --- STATIC FILE HANDLER (Vercel PHP can't serve static files directly) ---
+$staticResult = require_once __DIR__ . '/static.php';
+if ($staticResult !== false) {
+    exit; // Static file was served
+}
+// ---
+
 // --- VERCEL CONFIGURATION (must be before autoload for early env setup) ---
 $isVercel = isset($_SERVER['VERCEL_REGION']) || isset($_ENV['VERCEL_REGION']) || getenv('VERCEL_REGION');
 
