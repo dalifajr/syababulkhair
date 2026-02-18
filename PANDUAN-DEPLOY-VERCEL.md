@@ -64,6 +64,35 @@ Karena Vercel tidak menyediakan database, Anda perlu menggunakan layanan MySQL c
 3. Buat service MySQL
 4. Catat kredensial koneksi
 
+## ✅ TAHAP AKHIR: Migrasi Database
+
+Error `Table 'test.sessions' doesn't exist` berarti **Website Anda Sudah Berjalan 100%!** 🎉
+Hanya saja databasenya masih kosong.
+
+**Cara Mengisi Database (Run Migration):**
+Karena Vercel tidak punya terminal SSH, Anda harus menjalankannya dari **Laptop Lokal Anda**.
+
+1.  Buka file `.env` di laptop Anda.
+2.  Ubah sementara koneksi database ke **TiDB Cloud**:
+    ```text
+    DB_CONNECTION=mysql
+    DB_HOST=gateway01.ap-southeast-1.prod.aws.tidbcloud.com
+    DB_PORT=4000
+    DB_DATABASE=test  <-- Sesuaikan dengan nama DB Anda di TiDB
+    DB_USERNAME=...
+    DB_PASSWORD=...
+    MYSQL_ATTR_SSL_CA=certdb.pem
+    ```
+3.  Jalankan perintah ini di terminal VS Code:
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+4.  Jika sukses, kembalikan file `.env` ke settingan lokal (localhost).
+5.  **Buka Website Vercel Anda.** Seharusnya sudah tampil normal! 🚀
+
+---
+
+🎉 **SELAMAT! APLIKASI ANDA SUDAH LIVE DI INTERNET!** 🎉
 > **⚠️ PENTING:** Setelah mendapatkan kredensial database cloud, Anda perlu menjalankan migrasi Laravel. Caranya:
 > ```bash
 > # Di komputer lokal, ubah .env ke kredensial database cloud
