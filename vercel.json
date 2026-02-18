@@ -40,7 +40,6 @@
             "dest": "/api/index.php"
         }
     ],
-    "outputDirectory": "public",
     "buildCommand": "npm install && npm run build",
     "installCommand": "npm install"
 }
