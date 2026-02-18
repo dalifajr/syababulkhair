@@ -14,6 +14,6 @@
             "dest": "/api/index.php"
         }
     ],
-    "buildCommand": "npm install && npm run build && cp -r public/build build && cp -r public/images images 2>/dev/null || true",
+    "buildCommand": "chmod +x vercel-build.sh && ./vercel-build.sh",
     "installCommand": "npm install"
 }
