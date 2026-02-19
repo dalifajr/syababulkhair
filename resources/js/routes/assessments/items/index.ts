@@ -4,7 +4,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-export const destroy = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -19,7 +19,7 @@ destroy.definition = {
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-destroy.url = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assessment: args }
     }
@@ -52,7 +52,7 @@ destroy.url = (args: { assessment: string | number | { id: string | number } } |
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-destroy.delete = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -62,7 +62,7 @@ destroy.delete = (args: { assessment: string | number | { id: string | number } 
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-    const destroyForm = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -77,7 +77,7 @@ destroy.delete = (args: { assessment: string | number | { id: string | number } 
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-        destroyForm.delete = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

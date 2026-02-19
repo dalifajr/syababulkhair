@@ -4,7 +4,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:148
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-export const update = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -19,7 +19,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:148
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-update.url = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { enrollment: args }
     }
@@ -52,7 +52,7 @@ update.url = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:148
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-update.put = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -62,7 +62,7 @@ update.put = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:148
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-    const updateForm = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -77,7 +77,7 @@ update.put = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:148
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-        updateForm.put = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -93,7 +93,7 @@ update.put = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:160
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-export const destroy = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -108,7 +108,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:160
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-destroy.url = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { enrollment: args }
     }
@@ -141,7 +141,7 @@ destroy.url = (args: { enrollment: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:160
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-destroy.delete = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -151,7 +151,7 @@ destroy.delete = (args: { enrollment: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:160
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-    const destroyForm = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -166,7 +166,7 @@ destroy.delete = (args: { enrollment: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:160
  * @route '/admin/extracurricular-enrollments/{enrollment}'
  */
-        destroyForm.delete = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

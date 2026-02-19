@@ -82,7 +82,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-export const show = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -97,7 +97,7 @@ show.definition = {
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-show.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+show.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -130,7 +130,7 @@ show.url = (args: { assignment: string | number | { id: string | number } } | [a
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-show.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -139,7 +139,7 @@ show.get = (args: { assignment: string | number | { id: string | number } } | [a
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-show.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -149,7 +149,7 @@ show.head = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-    const showForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const showForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: show.url(args, options),
         method: 'get',
     })
@@ -159,7 +159,7 @@ show.head = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-        showForm.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, options),
             method: 'get',
         })
@@ -168,7 +168,7 @@ show.head = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AssessmentController.php:52
  * @route '/assessments/{assignment}'
  */
-        showForm.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -184,7 +184,7 @@ show.head = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-export const students = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const students = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: students.url(args, options),
     method: 'get',
 })
@@ -199,7 +199,7 @@ students.definition = {
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-students.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+students.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -232,7 +232,7 @@ students.url = (args: { assignment: string | number | { id: string | number } } 
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-students.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+students.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: students.url(args, options),
     method: 'get',
 })
@@ -241,7 +241,7 @@ students.get = (args: { assignment: string | number | { id: string | number } } 
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-students.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+students.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: students.url(args, options),
     method: 'head',
 })
@@ -251,7 +251,7 @@ students.head = (args: { assignment: string | number | { id: string | number } }
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-    const studentsForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const studentsForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: students.url(args, options),
         method: 'get',
     })
@@ -261,7 +261,7 @@ students.head = (args: { assignment: string | number | { id: string | number } }
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-        studentsForm.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        studentsForm.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: students.url(args, options),
             method: 'get',
         })
@@ -270,7 +270,7 @@ students.head = (args: { assignment: string | number | { id: string | number } }
  * @see app/Http/Controllers/AssessmentController.php:75
  * @route '/assessments/{assignment}/students'
  */
-        studentsForm.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        studentsForm.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: students.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -286,7 +286,7 @@ students.head = (args: { assignment: string | number | { id: string | number } }
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-export const tasks = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const tasks = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: tasks.url(args, options),
     method: 'get',
 })
@@ -301,7 +301,7 @@ tasks.definition = {
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-tasks.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+tasks.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -334,7 +334,7 @@ tasks.url = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-tasks.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+tasks.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: tasks.url(args, options),
     method: 'get',
 })
@@ -343,7 +343,7 @@ tasks.get = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-tasks.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+tasks.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: tasks.url(args, options),
     method: 'head',
 })
@@ -353,7 +353,7 @@ tasks.head = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-    const tasksForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const tasksForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: tasks.url(args, options),
         method: 'get',
     })
@@ -363,7 +363,7 @@ tasks.head = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-        tasksForm.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        tasksForm.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: tasks.url(args, options),
             method: 'get',
         })
@@ -372,7 +372,7 @@ tasks.head = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AssessmentController.php:127
  * @route '/assessments/{assignment}/tasks'
  */
-        tasksForm.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        tasksForm.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: tasks.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -388,7 +388,7 @@ tasks.head = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-export const createAssessment = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const createAssessment = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: createAssessment.url(args, options),
     method: 'get',
 })
@@ -403,7 +403,7 @@ createAssessment.definition = {
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-createAssessment.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+createAssessment.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -436,7 +436,7 @@ createAssessment.url = (args: { assignment: string | number | { id: string | num
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-createAssessment.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+createAssessment.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: createAssessment.url(args, options),
     method: 'get',
 })
@@ -445,7 +445,7 @@ createAssessment.get = (args: { assignment: string | number | { id: string | num
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-createAssessment.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+createAssessment.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: createAssessment.url(args, options),
     method: 'head',
 })
@@ -455,7 +455,7 @@ createAssessment.head = (args: { assignment: string | number | { id: string | nu
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-    const createAssessmentForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const createAssessmentForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: createAssessment.url(args, options),
         method: 'get',
     })
@@ -465,7 +465,7 @@ createAssessment.head = (args: { assignment: string | number | { id: string | nu
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-        createAssessmentForm.get = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        createAssessmentForm.get = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: createAssessment.url(args, options),
             method: 'get',
         })
@@ -474,7 +474,7 @@ createAssessment.head = (args: { assignment: string | number | { id: string | nu
  * @see app/Http/Controllers/AssessmentController.php:169
  * @route '/assessments/{assignment}/create'
  */
-        createAssessmentForm.head = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        createAssessmentForm.head = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: createAssessment.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -490,7 +490,7 @@ createAssessment.head = (args: { assignment: string | number | { id: string | nu
  * @see app/Http/Controllers/AssessmentController.php:177
  * @route '/assessments/{assignment}'
  */
-export const storeAssessment = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const storeAssessment = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: storeAssessment.url(args, options),
     method: 'post',
 })
@@ -505,7 +505,7 @@ storeAssessment.definition = {
  * @see app/Http/Controllers/AssessmentController.php:177
  * @route '/assessments/{assignment}'
  */
-storeAssessment.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+storeAssessment.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -538,7 +538,7 @@ storeAssessment.url = (args: { assignment: string | number | { id: string | numb
  * @see app/Http/Controllers/AssessmentController.php:177
  * @route '/assessments/{assignment}'
  */
-storeAssessment.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+storeAssessment.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: storeAssessment.url(args, options),
     method: 'post',
 })
@@ -548,7 +548,7 @@ storeAssessment.post = (args: { assignment: string | number | { id: string | num
  * @see app/Http/Controllers/AssessmentController.php:177
  * @route '/assessments/{assignment}'
  */
-    const storeAssessmentForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const storeAssessmentForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: storeAssessment.url(args, options),
         method: 'post',
     })
@@ -558,7 +558,7 @@ storeAssessment.post = (args: { assignment: string | number | { id: string | num
  * @see app/Http/Controllers/AssessmentController.php:177
  * @route '/assessments/{assignment}'
  */
-        storeAssessmentForm.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        storeAssessmentForm.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: storeAssessment.url(args, options),
             method: 'post',
         })
@@ -569,7 +569,7 @@ storeAssessment.post = (args: { assignment: string | number | { id: string | num
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-export const addStudents = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const addStudents = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: addStudents.url(args, options),
     method: 'post',
 })
@@ -584,7 +584,7 @@ addStudents.definition = {
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-addStudents.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+addStudents.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -617,7 +617,7 @@ addStudents.url = (args: { assignment: string | number | { id: string | number }
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-addStudents.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+addStudents.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: addStudents.url(args, options),
     method: 'post',
 })
@@ -627,7 +627,7 @@ addStudents.post = (args: { assignment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-    const addStudentsForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const addStudentsForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: addStudents.url(args, options),
         method: 'post',
     })
@@ -637,7 +637,7 @@ addStudents.post = (args: { assignment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-        addStudentsForm.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        addStudentsForm.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: addStudents.url(args, options),
             method: 'post',
         })
@@ -648,7 +648,7 @@ addStudents.post = (args: { assignment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-export const inputScores = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const inputScores = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: inputScores.url(args, options),
     method: 'get',
 })
@@ -663,7 +663,7 @@ inputScores.definition = {
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-inputScores.url = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+inputScores.url = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assessment: args }
     }
@@ -696,7 +696,7 @@ inputScores.url = (args: { assessment: string | number | { id: string | number }
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-inputScores.get = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+inputScores.get = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: inputScores.url(args, options),
     method: 'get',
 })
@@ -705,7 +705,7 @@ inputScores.get = (args: { assessment: string | number | { id: string | number }
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-inputScores.head = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+inputScores.head = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: inputScores.url(args, options),
     method: 'head',
 })
@@ -715,7 +715,7 @@ inputScores.head = (args: { assessment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-    const inputScoresForm = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const inputScoresForm = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: inputScores.url(args, options),
         method: 'get',
     })
@@ -725,7 +725,7 @@ inputScores.head = (args: { assessment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-        inputScoresForm.get = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        inputScoresForm.get = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: inputScores.url(args, options),
             method: 'get',
         })
@@ -734,7 +734,7 @@ inputScores.head = (args: { assessment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:198
  * @route '/assessments/scores/{assessment}'
  */
-        inputScoresForm.head = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        inputScoresForm.head = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: inputScores.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -750,7 +750,7 @@ inputScores.head = (args: { assessment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:222
  * @route '/assessments/scores/{assessment}'
  */
-export const saveScores = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const saveScores = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: saveScores.url(args, options),
     method: 'post',
 })
@@ -765,7 +765,7 @@ saveScores.definition = {
  * @see app/Http/Controllers/AssessmentController.php:222
  * @route '/assessments/scores/{assessment}'
  */
-saveScores.url = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+saveScores.url = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assessment: args }
     }
@@ -798,7 +798,7 @@ saveScores.url = (args: { assessment: string | number | { id: string | number } 
  * @see app/Http/Controllers/AssessmentController.php:222
  * @route '/assessments/scores/{assessment}'
  */
-saveScores.post = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+saveScores.post = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: saveScores.url(args, options),
     method: 'post',
 })
@@ -808,7 +808,7 @@ saveScores.post = (args: { assessment: string | number | { id: string | number }
  * @see app/Http/Controllers/AssessmentController.php:222
  * @route '/assessments/scores/{assessment}'
  */
-    const saveScoresForm = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const saveScoresForm = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: saveScores.url(args, options),
         method: 'post',
     })
@@ -818,7 +818,7 @@ saveScores.post = (args: { assessment: string | number | { id: string | number }
  * @see app/Http/Controllers/AssessmentController.php:222
  * @route '/assessments/scores/{assessment}'
  */
-        saveScoresForm.post = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        saveScoresForm.post = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: saveScores.url(args, options),
             method: 'post',
         })
@@ -829,7 +829,7 @@ saveScores.post = (args: { assessment: string | number | { id: string | number }
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-export const downloadScoresTemplate = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const downloadScoresTemplate = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: downloadScoresTemplate.url(args, options),
     method: 'get',
 })
@@ -844,7 +844,7 @@ downloadScoresTemplate.definition = {
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-downloadScoresTemplate.url = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+downloadScoresTemplate.url = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assessment: args }
     }
@@ -877,7 +877,7 @@ downloadScoresTemplate.url = (args: { assessment: string | number | { id: string
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-downloadScoresTemplate.get = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+downloadScoresTemplate.get = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: downloadScoresTemplate.url(args, options),
     method: 'get',
 })
@@ -886,7 +886,7 @@ downloadScoresTemplate.get = (args: { assessment: string | number | { id: string
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-downloadScoresTemplate.head = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+downloadScoresTemplate.head = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: downloadScoresTemplate.url(args, options),
     method: 'head',
 })
@@ -896,7 +896,7 @@ downloadScoresTemplate.head = (args: { assessment: string | number | { id: strin
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-    const downloadScoresTemplateForm = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const downloadScoresTemplateForm = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: downloadScoresTemplate.url(args, options),
         method: 'get',
     })
@@ -906,7 +906,7 @@ downloadScoresTemplate.head = (args: { assessment: string | number | { id: strin
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-        downloadScoresTemplateForm.get = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        downloadScoresTemplateForm.get = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: downloadScoresTemplate.url(args, options),
             method: 'get',
         })
@@ -915,7 +915,7 @@ downloadScoresTemplate.head = (args: { assessment: string | number | { id: strin
  * @see app/Http/Controllers/AssessmentController.php:253
  * @route '/assessments/scores/{assessment}/template'
  */
-        downloadScoresTemplateForm.head = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        downloadScoresTemplateForm.head = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: downloadScoresTemplate.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -931,7 +931,7 @@ downloadScoresTemplate.head = (args: { assessment: string | number | { id: strin
  * @see app/Http/Controllers/AssessmentController.php:266
  * @route '/assessments/scores/{assessment}/import'
  */
-export const importScores = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const importScores = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: importScores.url(args, options),
     method: 'post',
 })
@@ -946,7 +946,7 @@ importScores.definition = {
  * @see app/Http/Controllers/AssessmentController.php:266
  * @route '/assessments/scores/{assessment}/import'
  */
-importScores.url = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+importScores.url = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assessment: args }
     }
@@ -979,7 +979,7 @@ importScores.url = (args: { assessment: string | number | { id: string | number 
  * @see app/Http/Controllers/AssessmentController.php:266
  * @route '/assessments/scores/{assessment}/import'
  */
-importScores.post = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+importScores.post = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: importScores.url(args, options),
     method: 'post',
 })
@@ -989,7 +989,7 @@ importScores.post = (args: { assessment: string | number | { id: string | number
  * @see app/Http/Controllers/AssessmentController.php:266
  * @route '/assessments/scores/{assessment}/import'
  */
-    const importScoresForm = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const importScoresForm = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: importScores.url(args, options),
         method: 'post',
     })
@@ -999,7 +999,7 @@ importScores.post = (args: { assessment: string | number | { id: string | number
  * @see app/Http/Controllers/AssessmentController.php:266
  * @route '/assessments/scores/{assessment}/import'
  */
-        importScoresForm.post = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        importScoresForm.post = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: importScores.url(args, options),
             method: 'post',
         })
@@ -1010,7 +1010,7 @@ importScores.post = (args: { assessment: string | number | { id: string | number
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-export const destroyAssessment = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroyAssessment = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroyAssessment.url(args, options),
     method: 'delete',
 })
@@ -1025,7 +1025,7 @@ destroyAssessment.definition = {
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-destroyAssessment.url = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroyAssessment.url = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assessment: args }
     }
@@ -1058,7 +1058,7 @@ destroyAssessment.url = (args: { assessment: string | number | { id: string | nu
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-destroyAssessment.delete = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroyAssessment.delete = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroyAssessment.url(args, options),
     method: 'delete',
 })
@@ -1068,7 +1068,7 @@ destroyAssessment.delete = (args: { assessment: string | number | { id: string |
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-    const destroyAssessmentForm = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyAssessmentForm = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroyAssessment.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -1083,7 +1083,7 @@ destroyAssessment.delete = (args: { assessment: string | number | { id: string |
  * @see app/Http/Controllers/AssessmentController.php:290
  * @route '/assessments/items/{assessment}'
  */
-        destroyAssessmentForm.delete = (args: { assessment: string | number | { id: string | number } } | [assessment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyAssessmentForm.delete = (args: { assessment: number | { id: number } } | [assessment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroyAssessment.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

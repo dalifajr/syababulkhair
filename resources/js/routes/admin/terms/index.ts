@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-export const edit = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-edit.url = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { term: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { term: string | number | { id: string | number } } | [term: s
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-edit.get = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { term: string | number | { id: string | number } } | [term: s
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-edit.head = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { term: string | number | { id: string | number } } | [term: 
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-    const editForm = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { term: string | number | { id: string | number } } | [term: 
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-        editForm.get = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { term: string | number | { id: string | number } } | [term: 
  * @see app/Http/Controllers/Admin/TermController.php:60
  * @route '/admin/terms/{term}/edit'
  */
-        editForm.head = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { term: string | number | { id: string | number } } | [term: 
  * @see app/Http/Controllers/Admin/TermController.php:70
  * @route '/admin/terms/{term}'
  */
-export const update = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/TermController.php:70
  * @route '/admin/terms/{term}'
  */
-update.url = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { term: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { term: string | number | { id: string | number } } | [term:
  * @see app/Http/Controllers/Admin/TermController.php:70
  * @route '/admin/terms/{term}'
  */
-update.put = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { term: string | number | { id: string | number } } | [term:
  * @see app/Http/Controllers/Admin/TermController.php:70
  * @route '/admin/terms/{term}'
  */
-    const updateForm = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { term: string | number | { id: string | number } } | [term:
  * @see app/Http/Controllers/Admin/TermController.php:70
  * @route '/admin/terms/{term}'
  */
-        updateForm.put = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { term: string | number | { id: string | number } } | [term:
  * @see app/Http/Controllers/Admin/TermController.php:91
  * @route '/admin/terms/{term}'
  */
-export const destroy = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/TermController.php:91
  * @route '/admin/terms/{term}'
  */
-destroy.url = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { term: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { term: string | number | { id: string | number } } | [term
  * @see app/Http/Controllers/Admin/TermController.php:91
  * @route '/admin/terms/{term}'
  */
-destroy.delete = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { term: string | number | { id: string | number } } | [t
  * @see app/Http/Controllers/Admin/TermController.php:91
  * @route '/admin/terms/{term}'
  */
-    const destroyForm = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { term: string | number | { id: string | number } } | [t
  * @see app/Http/Controllers/Admin/TermController.php:91
  * @route '/admin/terms/{term}'
  */
-        destroyForm.delete = (args: { term: string | number | { id: string | number } } | [term: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { term: number | { id: number } } | [term: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

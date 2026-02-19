@@ -319,16 +319,15 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         <div className="yp-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.3 }} />
                     </div>
 
-                    <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 24px', maxWidth: '960px', margin: '0 auto' }}>
+                    <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '960px', margin: '0 auto' }} className="px-4 sm:px-6">
                         {/* Logo */}
                         <div className="yp-scaleIn" style={{ marginBottom: '32px' }}>
                             <div className="yp-pulseGlow" style={{ display: 'inline-block', borderRadius: '50%' }}>
                                 <img
                                     src={getContent('hero', 'hero_logo', '/images/yayasan-logo.png')}
                                     alt="Logo Yayasan RQ Syababul Khair"
+                                    className="h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36"
                                     style={{
-                                        height: '140px',
-                                        width: '140px',
                                         borderRadius: '50%',
                                         objectFit: 'cover',
                                         border: '4px solid rgba(200,169,81,0.5)',
@@ -351,19 +350,19 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="yp-fadeInUp" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px', animationDelay: '0.3s' }}>
+                        <div className="yp-fadeInUp flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-4" style={{ animationDelay: '0.3s' }}>
                             <button
                                 onClick={() => scrollToSection('tentang')}
+                                className="text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4"
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
+                                    justifyContent: 'center',
                                     gap: '8px',
                                     backgroundColor: '#c8a951',
                                     color: '#0a5832',
-                                    padding: '16px 32px',
                                     borderRadius: '50px',
                                     fontWeight: 600,
-                                    fontSize: '16px',
                                     border: 'none',
                                     cursor: 'pointer',
                                     boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
@@ -375,16 +374,16 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </button>
                             <Link
                                 href="/login"
+                                className="text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4"
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
+                                    justifyContent: 'center',
                                     gap: '8px',
                                     border: '2px solid rgba(255,255,255,0.3)',
                                     color: '#fff',
-                                    padding: '14px 32px',
                                     borderRadius: '50px',
                                     fontWeight: 600,
-                                    fontSize: '16px',
                                     textDecoration: 'none',
                                     transition: 'all 0.3s',
                                     backgroundColor: 'transparent',
@@ -406,9 +405,9 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 <div className="yp-divider" />
 
                 {/* About Section */}
-                <section id="tentang" style={{ padding: '80px 0', position: 'relative' }}>
-                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '64px', alignItems: 'center' }}>
+                <section id="tentang" style={{ padding: '80px 0', position: 'relative' }} className="px-4 md:px-6">
+                    <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                             <div className="yp-fadeInLeft">
                                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(13,110,63,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
                                     <BookOpen size={16} color="#0d6e3f" />
@@ -473,7 +472,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </p>
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', maxWidth: '960px', margin: '0 auto' }}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                             {/* Visi */}
                             <div className="yp-fadeInLeft yp-card-hover" style={{ animationDelay: '0.2s' }}>
                                 <div style={{ backgroundColor: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(20px)', borderRadius: '24px', padding: '40px', border: '1px solid rgba(255,255,255,0.1)', height: '100%' }}>
@@ -536,7 +535,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </p>
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {programs.map((program, index) => {
                                 const IconComponent = program.icon;
                                 return (
@@ -594,7 +593,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </p>
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="yp-fadeInLeft">
                                 <div className="yp-photo" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.15)', position: 'relative' }}>
                                     <img

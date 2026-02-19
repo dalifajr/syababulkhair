@@ -137,7 +137,7 @@ generate.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-export const show = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -152,7 +152,7 @@ show.definition = {
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-show.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+show.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -185,7 +185,7 @@ show.url = (args: { reportCard: string | number | { id: string | number } } | [r
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-show.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -194,7 +194,7 @@ show.get = (args: { reportCard: string | number | { id: string | number } } | [r
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-show.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -204,7 +204,7 @@ show.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-    const showForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const showForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: show.url(args, options),
         method: 'get',
     })
@@ -214,7 +214,7 @@ show.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-        showForm.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, options),
             method: 'get',
         })
@@ -223,7 +223,7 @@ show.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:211
  * @route '/admin/report-cards/{reportCard}'
  */
-        showForm.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -239,7 +239,7 @@ show.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-export const edit = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -254,7 +254,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-edit.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -287,7 +287,7 @@ edit.url = (args: { reportCard: string | number | { id: string | number } } | [r
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-edit.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -296,7 +296,7 @@ edit.get = (args: { reportCard: string | number | { id: string | number } } | [r
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-edit.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -306,7 +306,7 @@ edit.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-    const editForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -316,7 +316,7 @@ edit.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-        editForm.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -325,7 +325,7 @@ edit.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:239
  * @route '/admin/report-cards/{reportCard}/edit'
  */
-        editForm.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -341,7 +341,7 @@ edit.head = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:258
  * @route '/admin/report-cards/{reportCard}'
  */
-export const update = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -356,7 +356,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/ReportCardController.php:258
  * @route '/admin/report-cards/{reportCard}'
  */
-update.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -389,7 +389,7 @@ update.url = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:258
  * @route '/admin/report-cards/{reportCard}'
  */
-update.put = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -399,7 +399,7 @@ update.put = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:258
  * @route '/admin/report-cards/{reportCard}'
  */
-    const updateForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -414,7 +414,7 @@ update.put = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:258
  * @route '/admin/report-cards/{reportCard}'
  */
-        updateForm.put = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -430,7 +430,7 @@ update.put = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:311
  * @route '/admin/report-cards/{reportCard}/lock'
  */
-export const lock = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const lock = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: lock.url(args, options),
     method: 'post',
 })
@@ -445,7 +445,7 @@ lock.definition = {
  * @see app/Http/Controllers/Admin/ReportCardController.php:311
  * @route '/admin/report-cards/{reportCard}/lock'
  */
-lock.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+lock.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -478,7 +478,7 @@ lock.url = (args: { reportCard: string | number | { id: string | number } } | [r
  * @see app/Http/Controllers/Admin/ReportCardController.php:311
  * @route '/admin/report-cards/{reportCard}/lock'
  */
-lock.post = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+lock.post = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: lock.url(args, options),
     method: 'post',
 })
@@ -488,7 +488,7 @@ lock.post = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:311
  * @route '/admin/report-cards/{reportCard}/lock'
  */
-    const lockForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const lockForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: lock.url(args, options),
         method: 'post',
     })
@@ -498,7 +498,7 @@ lock.post = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:311
  * @route '/admin/report-cards/{reportCard}/lock'
  */
-        lockForm.post = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        lockForm.post = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: lock.url(args, options),
             method: 'post',
         })
@@ -509,7 +509,7 @@ lock.post = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:319
  * @route '/admin/report-cards/{reportCard}/unlock'
  */
-export const unlock = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const unlock = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: unlock.url(args, options),
     method: 'post',
 })
@@ -524,7 +524,7 @@ unlock.definition = {
  * @see app/Http/Controllers/Admin/ReportCardController.php:319
  * @route '/admin/report-cards/{reportCard}/unlock'
  */
-unlock.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+unlock.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -557,7 +557,7 @@ unlock.url = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:319
  * @route '/admin/report-cards/{reportCard}/unlock'
  */
-unlock.post = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+unlock.post = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: unlock.url(args, options),
     method: 'post',
 })
@@ -567,7 +567,7 @@ unlock.post = (args: { reportCard: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/ReportCardController.php:319
  * @route '/admin/report-cards/{reportCard}/unlock'
  */
-    const unlockForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const unlockForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: unlock.url(args, options),
         method: 'post',
     })
@@ -577,7 +577,7 @@ unlock.post = (args: { reportCard: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/ReportCardController.php:319
  * @route '/admin/report-cards/{reportCard}/unlock'
  */
-        unlockForm.post = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        unlockForm.post = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: unlock.url(args, options),
             method: 'post',
         })
@@ -588,7 +588,7 @@ unlock.post = (args: { reportCard: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-export const print = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const print = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: print.url(args, options),
     method: 'get',
 })
@@ -603,7 +603,7 @@ print.definition = {
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-print.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+print.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -636,7 +636,7 @@ print.url = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-print.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+print.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: print.url(args, options),
     method: 'get',
 })
@@ -645,7 +645,7 @@ print.get = (args: { reportCard: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-print.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+print.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: print.url(args, options),
     method: 'head',
 })
@@ -655,7 +655,7 @@ print.head = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-    const printForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const printForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: print.url(args, options),
         method: 'get',
     })
@@ -665,7 +665,7 @@ print.head = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-        printForm.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        printForm.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: print.url(args, options),
             method: 'get',
         })
@@ -674,7 +674,7 @@ print.head = (args: { reportCard: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ReportCardController.php:327
  * @route '/admin/report-cards/{reportCard}/print'
  */
-        printForm.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        printForm.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: print.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',

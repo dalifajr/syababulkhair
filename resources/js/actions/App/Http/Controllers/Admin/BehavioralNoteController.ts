@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-export const edit = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-edit.url = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { behavioralNote: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { behavioralNote: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-edit.get = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { behavioralNote: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-edit.head = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { behavioralNote: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-    const editForm = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { behavioralNote: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-        editForm.get = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { behavioralNote: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:71
  * @route '/admin/behavioral-notes/{behavioralNote}/edit'
  */
-        editForm.head = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { behavioralNote: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:82
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-export const update = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:82
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-update.url = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { behavioralNote: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { behavioralNote: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:82
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-update.put = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { behavioralNote: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:82
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-    const updateForm = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { behavioralNote: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:82
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-        updateForm.put = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { behavioralNote: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:97
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-export const destroy = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:97
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-destroy.url = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { behavioralNote: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { behavioralNote: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:97
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-destroy.delete = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { behavioralNote: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:97
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-    const destroyForm = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { behavioralNote: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/BehavioralNoteController.php:97
  * @route '/admin/behavioral-notes/{behavioralNote}'
  */
-        destroyForm.delete = (args: { behavioralNote: string | number | { id: string | number } } | [behavioralNote: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { behavioralNote: number | { id: number } } | [behavioralNote: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

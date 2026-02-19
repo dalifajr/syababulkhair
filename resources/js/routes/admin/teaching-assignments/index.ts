@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-export const edit = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-edit.url = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { teachingAssignment: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { teachingAssignment: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-edit.get = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { teachingAssignment: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-edit.head = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { teachingAssignment: string | number | { id: string | number
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-    const editForm = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { teachingAssignment: string | number | { id: string | number
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-        editForm.get = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { teachingAssignment: string | number | { id: string | number
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:72
  * @route '/admin/teaching-assignments/{teachingAssignment}/edit'
  */
-        editForm.head = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { teachingAssignment: string | number | { id: string | number
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:88
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-export const update = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:88
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-update.url = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { teachingAssignment: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { teachingAssignment: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:88
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-update.put = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { teachingAssignment: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:88
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-    const updateForm = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { teachingAssignment: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:88
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-        updateForm.put = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { teachingAssignment: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:103
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-export const destroy = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:103
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-destroy.url = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { teachingAssignment: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { teachingAssignment: string | number | { id: string | numb
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:103
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-destroy.delete = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { teachingAssignment: string | number | { id: string | n
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:103
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-    const destroyForm = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { teachingAssignment: string | number | { id: string | n
  * @see app/Http/Controllers/Admin/TeachingAssignmentController.php:103
  * @route '/admin/teaching-assignments/{teachingAssignment}'
  */
-        destroyForm.delete = (args: { teachingAssignment: string | number | { id: string | number } } | [teachingAssignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { teachingAssignment: number | { id: number } } | [teachingAssignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

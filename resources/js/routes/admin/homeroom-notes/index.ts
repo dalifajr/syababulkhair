@@ -82,7 +82,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-export const show = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -97,7 +97,7 @@ show.definition = {
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-show.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+show.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -130,7 +130,7 @@ show.url = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-show.get = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -139,7 +139,7 @@ show.get = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-show.head = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -149,7 +149,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-    const showForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const showForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: show.url(args, options),
         method: 'get',
     })
@@ -159,7 +159,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-        showForm.get = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.get = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, options),
             method: 'get',
         })
@@ -168,7 +168,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:43
  * @route '/admin/homeroom-notes/{classGroup}'
  */
-        showForm.head = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.head = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -184,7 +184,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-export const edit = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -199,7 +199,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-edit.url = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { enrollment: args }
     }
@@ -232,7 +232,7 @@ edit.url = (args: { enrollment: string | number | { id: string | number } } | [e
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-edit.get = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -241,7 +241,7 @@ edit.get = (args: { enrollment: string | number | { id: string | number } } | [e
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-edit.head = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -251,7 +251,7 @@ edit.head = (args: { enrollment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-    const editForm = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -261,7 +261,7 @@ edit.head = (args: { enrollment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-        editForm.get = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -270,7 +270,7 @@ edit.head = (args: { enrollment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:68
  * @route '/admin/homeroom-notes/edit/{enrollment}'
  */
-        editForm.head = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -286,7 +286,7 @@ edit.head = (args: { enrollment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:82
  * @route '/admin/homeroom-notes/{enrollment}'
  */
-export const update = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -301,7 +301,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:82
  * @route '/admin/homeroom-notes/{enrollment}'
  */
-update.url = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { enrollment: args }
     }
@@ -334,7 +334,7 @@ update.url = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:82
  * @route '/admin/homeroom-notes/{enrollment}'
  */
-update.put = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -344,7 +344,7 @@ update.put = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:82
  * @route '/admin/homeroom-notes/{enrollment}'
  */
-    const updateForm = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -359,7 +359,7 @@ update.put = (args: { enrollment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/HomeroomNoteController.php:82
  * @route '/admin/homeroom-notes/{enrollment}'
  */
-        updateForm.put = (args: { enrollment: string | number | { id: string | number } } | [enrollment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { enrollment: number | { id: number } } | [enrollment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',

@@ -160,7 +160,7 @@ exportStudents.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => 
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-export const studentDetail = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const studentDetail = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: studentDetail.url(args, options),
     method: 'get',
 })
@@ -175,7 +175,7 @@ studentDetail.definition = {
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-studentDetail.url = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+studentDetail.url = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { student: args }
     }
@@ -208,7 +208,7 @@ studentDetail.url = (args: { student: string | number | { id: string | number } 
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-studentDetail.get = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+studentDetail.get = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: studentDetail.url(args, options),
     method: 'get',
 })
@@ -217,7 +217,7 @@ studentDetail.get = (args: { student: string | number | { id: string | number } 
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-studentDetail.head = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+studentDetail.head = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: studentDetail.url(args, options),
     method: 'head',
 })
@@ -227,7 +227,7 @@ studentDetail.head = (args: { student: string | number | { id: string | number }
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-    const studentDetailForm = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const studentDetailForm = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: studentDetail.url(args, options),
         method: 'get',
     })
@@ -237,7 +237,7 @@ studentDetail.head = (args: { student: string | number | { id: string | number }
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-        studentDetailForm.get = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        studentDetailForm.get = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: studentDetail.url(args, options),
             method: 'get',
         })
@@ -246,7 +246,7 @@ studentDetail.head = (args: { student: string | number | { id: string | number }
  * @see app/Http/Controllers/ReportController.php:167
  * @route '/reports/students/{student}'
  */
-        studentDetailForm.head = (args: { student: string | number | { id: string | number } } | [student: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        studentDetailForm.head = (args: { student: number | { id: number } } | [student: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: studentDetail.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',

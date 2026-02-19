@@ -82,7 +82,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-export const show = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -97,7 +97,7 @@ show.definition = {
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-show.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+show.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -130,7 +130,7 @@ show.url = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-show.get = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -139,7 +139,7 @@ show.get = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-show.head = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -149,7 +149,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-    const showForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const showForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: show.url(args, options),
         method: 'get',
     })
@@ -159,7 +159,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-        showForm.get = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.get = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, options),
             method: 'get',
         })
@@ -168,7 +168,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:58
  * @route '/admin/class-promotions/{classGroup}'
  */
-        showForm.head = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.head = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -184,7 +184,7 @@ show.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:92
  * @route '/admin/class-promotions/{classGroup}/process'
  */
-export const process = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const process = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: process.url(args, options),
     method: 'post',
 })
@@ -199,7 +199,7 @@ process.definition = {
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:92
  * @route '/admin/class-promotions/{classGroup}/process'
  */
-process.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+process.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -232,7 +232,7 @@ process.url = (args: { classGroup: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:92
  * @route '/admin/class-promotions/{classGroup}/process'
  */
-process.post = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+process.post = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: process.url(args, options),
     method: 'post',
 })
@@ -242,7 +242,7 @@ process.post = (args: { classGroup: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:92
  * @route '/admin/class-promotions/{classGroup}/process'
  */
-    const processForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const processForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: process.url(args, options),
         method: 'post',
     })
@@ -252,7 +252,7 @@ process.post = (args: { classGroup: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:92
  * @route '/admin/class-promotions/{classGroup}/process'
  */
-        processForm.post = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        processForm.post = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: process.url(args, options),
             method: 'post',
         })
@@ -263,7 +263,7 @@ process.post = (args: { classGroup: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:158
  * @route '/admin/class-promotions/{classGroup}/bulk'
  */
-export const bulk = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const bulk = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: bulk.url(args, options),
     method: 'post',
 })
@@ -278,7 +278,7 @@ bulk.definition = {
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:158
  * @route '/admin/class-promotions/{classGroup}/bulk'
  */
-bulk.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+bulk.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -311,7 +311,7 @@ bulk.url = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:158
  * @route '/admin/class-promotions/{classGroup}/bulk'
  */
-bulk.post = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+bulk.post = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: bulk.url(args, options),
     method: 'post',
 })
@@ -321,7 +321,7 @@ bulk.post = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:158
  * @route '/admin/class-promotions/{classGroup}/bulk'
  */
-    const bulkForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const bulkForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: bulk.url(args, options),
         method: 'post',
     })
@@ -331,7 +331,7 @@ bulk.post = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassPromotionController.php:158
  * @route '/admin/class-promotions/{classGroup}/bulk'
  */
-        bulkForm.post = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        bulkForm.post = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: bulk.url(args, options),
             method: 'post',
         })

@@ -4,7 +4,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-export const add = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const add = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: add.url(args, options),
     method: 'post',
 })
@@ -19,7 +19,7 @@ add.definition = {
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-add.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+add.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -52,7 +52,7 @@ add.url = (args: { assignment: string | number | { id: string | number } } | [as
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-add.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+add.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: add.url(args, options),
     method: 'post',
 })
@@ -62,7 +62,7 @@ add.post = (args: { assignment: string | number | { id: string | number } } | [a
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-    const addForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const addForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: add.url(args, options),
         method: 'post',
     })
@@ -72,7 +72,7 @@ add.post = (args: { assignment: string | number | { id: string | number } } | [a
  * @see app/Http/Controllers/AssessmentController.php:143
  * @route '/assessments/{assignment}/students'
  */
-        addForm.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        addForm.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: add.url(args, options),
             method: 'post',
         })

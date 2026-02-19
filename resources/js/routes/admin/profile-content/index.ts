@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-export const edit = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-edit.url = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { profileContent: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { profileContent: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-edit.get = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { profileContent: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-edit.head = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { profileContent: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-    const editForm = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { profileContent: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-        editForm.get = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { profileContent: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/ProfileContentController.php:79
  * @route '/admin/profile-content/{profileContent}/edit'
  */
-        editForm.head = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { profileContent: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/ProfileContentController.php:88
  * @route '/admin/profile-content/{profileContent}'
  */
-export const update = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/ProfileContentController.php:88
  * @route '/admin/profile-content/{profileContent}'
  */
-update.url = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { profileContent: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { profileContent: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ProfileContentController.php:88
  * @route '/admin/profile-content/{profileContent}'
  */
-update.put = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { profileContent: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ProfileContentController.php:88
  * @route '/admin/profile-content/{profileContent}'
  */
-    const updateForm = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { profileContent: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ProfileContentController.php:88
  * @route '/admin/profile-content/{profileContent}'
  */
-        updateForm.put = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { profileContent: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ProfileContentController.php:116
  * @route '/admin/profile-content/{profileContent}'
  */
-export const destroy = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/ProfileContentController.php:116
  * @route '/admin/profile-content/{profileContent}'
  */
-destroy.url = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { profileContent: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { profileContent: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/ProfileContentController.php:116
  * @route '/admin/profile-content/{profileContent}'
  */
-destroy.delete = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { profileContent: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/ProfileContentController.php:116
  * @route '/admin/profile-content/{profileContent}'
  */
-    const destroyForm = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { profileContent: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/ProfileContentController.php:116
  * @route '/admin/profile-content/{profileContent}'
  */
-        destroyForm.delete = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',
@@ -495,7 +495,7 @@ destroy.delete = (args: { profileContent: string | number | { id: string | numbe
  * @see app/Http/Controllers/Admin/ProfileContentController.php:132
  * @route '/admin/profile-content/{profileContent}/toggle-active'
  */
-export const toggleActive = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const toggleActive = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: toggleActive.url(args, options),
     method: 'post',
 })
@@ -510,7 +510,7 @@ toggleActive.definition = {
  * @see app/Http/Controllers/Admin/ProfileContentController.php:132
  * @route '/admin/profile-content/{profileContent}/toggle-active'
  */
-toggleActive.url = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+toggleActive.url = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { profileContent: args }
     }
@@ -543,7 +543,7 @@ toggleActive.url = (args: { profileContent: string | number | { id: string | num
  * @see app/Http/Controllers/Admin/ProfileContentController.php:132
  * @route '/admin/profile-content/{profileContent}/toggle-active'
  */
-toggleActive.post = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+toggleActive.post = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: toggleActive.url(args, options),
     method: 'post',
 })
@@ -553,7 +553,7 @@ toggleActive.post = (args: { profileContent: string | number | { id: string | nu
  * @see app/Http/Controllers/Admin/ProfileContentController.php:132
  * @route '/admin/profile-content/{profileContent}/toggle-active'
  */
-    const toggleActiveForm = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const toggleActiveForm = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: toggleActive.url(args, options),
         method: 'post',
     })
@@ -563,7 +563,7 @@ toggleActive.post = (args: { profileContent: string | number | { id: string | nu
  * @see app/Http/Controllers/Admin/ProfileContentController.php:132
  * @route '/admin/profile-content/{profileContent}/toggle-active'
  */
-        toggleActiveForm.post = (args: { profileContent: string | number | { id: string | number } } | [profileContent: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        toggleActiveForm.post = (args: { profileContent: number | { id: number } } | [profileContent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: toggleActive.url(args, options),
             method: 'post',
         })

@@ -4,7 +4,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
  * @see app/Http/Controllers/AttendanceController.php:61
  * @route '/assessments/{assignment}/attendance'
  */
-export const store = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const store = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(args, options),
     method: 'post',
 })
@@ -19,7 +19,7 @@ store.definition = {
  * @see app/Http/Controllers/AttendanceController.php:61
  * @route '/assessments/{assignment}/attendance'
  */
-store.url = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+store.url = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { assignment: args }
     }
@@ -52,7 +52,7 @@ store.url = (args: { assignment: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/AttendanceController.php:61
  * @route '/assessments/{assignment}/attendance'
  */
-store.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+store.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(args, options),
     method: 'post',
 })
@@ -62,7 +62,7 @@ store.post = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AttendanceController.php:61
  * @route '/assessments/{assignment}/attendance'
  */
-    const storeForm = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const storeForm = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: store.url(args, options),
         method: 'post',
     })
@@ -72,7 +72,7 @@ store.post = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AttendanceController.php:61
  * @route '/assessments/{assignment}/attendance'
  */
-        storeForm.post = (args: { assignment: string | number | { id: string | number } } | [assignment: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        storeForm.post = (args: { assignment: number | { id: number } } | [assignment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: store.url(args, options),
             method: 'post',
         })
@@ -83,7 +83,7 @@ store.post = (args: { assignment: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-export const show = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -98,7 +98,7 @@ show.definition = {
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-show.url = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions) => {
+show.url = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions) => {
     if (Array.isArray(args)) {
         args = {
                     assignment: args[0],
@@ -128,7 +128,7 @@ show.url = (args: { assignment: string | number | { id: string | number }, sessi
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-show.get = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -137,7 +137,7 @@ show.get = (args: { assignment: string | number | { id: string | number }, sessi
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-show.head = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -147,7 +147,7 @@ show.head = (args: { assignment: string | number | { id: string | number }, sess
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-    const showForm = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const showForm = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: show.url(args, options),
         method: 'get',
     })
@@ -157,7 +157,7 @@ show.head = (args: { assignment: string | number | { id: string | number }, sess
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-        showForm.get = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.get = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, options),
             method: 'get',
         })
@@ -166,7 +166,7 @@ show.head = (args: { assignment: string | number | { id: string | number }, sess
  * @see app/Http/Controllers/AttendanceController.php:107
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-        showForm.head = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.head = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -182,7 +182,7 @@ show.head = (args: { assignment: string | number | { id: string | number }, sess
  * @see app/Http/Controllers/AttendanceController.php:203
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-export const update = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const update = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: update.url(args, options),
     method: 'post',
 })
@@ -197,7 +197,7 @@ update.definition = {
  * @see app/Http/Controllers/AttendanceController.php:203
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-update.url = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions) => {
+update.url = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions) => {
     if (Array.isArray(args)) {
         args = {
                     assignment: args[0],
@@ -227,7 +227,7 @@ update.url = (args: { assignment: string | number | { id: string | number }, ses
  * @see app/Http/Controllers/AttendanceController.php:203
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-update.post = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+update.post = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: update.url(args, options),
     method: 'post',
 })
@@ -237,7 +237,7 @@ update.post = (args: { assignment: string | number | { id: string | number }, se
  * @see app/Http/Controllers/AttendanceController.php:203
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-    const updateForm = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, options),
         method: 'post',
     })
@@ -247,7 +247,7 @@ update.post = (args: { assignment: string | number | { id: string | number }, se
  * @see app/Http/Controllers/AttendanceController.php:203
  * @route '/assessments/{assignment}/attendance/{session}'
  */
-        updateForm.post = (args: { assignment: string | number | { id: string | number }, session: string | number | { id: string | number } } | [assignment: string | number | { id: string | number }, session: string | number | { id: string | number } ], options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.post = (args: { assignment: number | { id: number }, session: number | { id: number } } | [assignment: number | { id: number }, session: number | { id: number } ], options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, options),
             method: 'post',
         })

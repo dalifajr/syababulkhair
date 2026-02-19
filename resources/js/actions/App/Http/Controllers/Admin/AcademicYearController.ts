@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-export const edit = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-edit.url = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { academicYear: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { academicYear: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-edit.get = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { academicYear: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-edit.head = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { academicYear: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-    const editForm = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { academicYear: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-        editForm.get = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { academicYear: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/AcademicYearController.php:54
  * @route '/admin/academic-years/{academicYear}/edit'
  */
-        editForm.head = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { academicYear: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/AcademicYearController.php:61
  * @route '/admin/academic-years/{academicYear}'
  */
-export const update = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/AcademicYearController.php:61
  * @route '/admin/academic-years/{academicYear}'
  */
-update.url = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { academicYear: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { academicYear: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:61
  * @route '/admin/academic-years/{academicYear}'
  */
-update.put = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { academicYear: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:61
  * @route '/admin/academic-years/{academicYear}'
  */
-    const updateForm = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { academicYear: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:61
  * @route '/admin/academic-years/{academicYear}'
  */
-        updateForm.put = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { academicYear: string | number | { id: string | number } } 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:81
  * @route '/admin/academic-years/{academicYear}'
  */
-export const destroy = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/AcademicYearController.php:81
  * @route '/admin/academic-years/{academicYear}'
  */
-destroy.url = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { academicYear: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { academicYear: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/AcademicYearController.php:81
  * @route '/admin/academic-years/{academicYear}'
  */
-destroy.delete = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { academicYear: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:81
  * @route '/admin/academic-years/{academicYear}'
  */
-    const destroyForm = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { academicYear: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/AcademicYearController.php:81
  * @route '/admin/academic-years/{academicYear}'
  */
-        destroyForm.delete = (args: { academicYear: string | number | { id: string | number } } | [academicYear: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { academicYear: number | { id: number } } | [academicYear: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

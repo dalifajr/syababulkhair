@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-export const edit = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-edit.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-edit.get = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { classGroup: string | number | { id: string | number } } | [c
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-edit.head = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-    const editForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-        editForm.get = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassGroupController.php:63
  * @route '/admin/class-groups/{classGroup}/edit'
  */
-        editForm.head = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { classGroup: string | number | { id: string | number } } | [
  * @see app/Http/Controllers/Admin/ClassGroupController.php:75
  * @route '/admin/class-groups/{classGroup}'
  */
-export const update = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/ClassGroupController.php:75
  * @route '/admin/class-groups/{classGroup}'
  */
-update.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { classGroup: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ClassGroupController.php:75
  * @route '/admin/class-groups/{classGroup}'
  */
-update.put = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { classGroup: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ClassGroupController.php:75
  * @route '/admin/class-groups/{classGroup}'
  */
-    const updateForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { classGroup: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ClassGroupController.php:75
  * @route '/admin/class-groups/{classGroup}'
  */
-        updateForm.put = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { classGroup: string | number | { id: string | number } } | 
  * @see app/Http/Controllers/Admin/ClassGroupController.php:91
  * @route '/admin/class-groups/{classGroup}'
  */
-export const destroy = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/ClassGroupController.php:91
  * @route '/admin/class-groups/{classGroup}'
  */
-destroy.url = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { classGroup: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { classGroup: string | number | { id: string | number } } |
  * @see app/Http/Controllers/Admin/ClassGroupController.php:91
  * @route '/admin/class-groups/{classGroup}'
  */
-destroy.delete = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { classGroup: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ClassGroupController.php:91
  * @route '/admin/class-groups/{classGroup}'
  */
-    const destroyForm = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { classGroup: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ClassGroupController.php:91
  * @route '/admin/class-groups/{classGroup}'
  */
-        destroyForm.delete = (args: { classGroup: string | number | { id: string | number } } | [classGroup: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { classGroup: number | { id: number } } | [classGroup: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

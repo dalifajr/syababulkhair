@@ -394,7 +394,7 @@ reportCards.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-export const reportCardDetail = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const reportCardDetail = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: reportCardDetail.url(args, options),
     method: 'get',
 })
@@ -409,7 +409,7 @@ reportCardDetail.definition = {
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-reportCardDetail.url = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+reportCardDetail.url = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { reportCard: args }
     }
@@ -442,7 +442,7 @@ reportCardDetail.url = (args: { reportCard: string | number | { id: string | num
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-reportCardDetail.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+reportCardDetail.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: reportCardDetail.url(args, options),
     method: 'get',
 })
@@ -451,7 +451,7 @@ reportCardDetail.get = (args: { reportCard: string | number | { id: string | num
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-reportCardDetail.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+reportCardDetail.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: reportCardDetail.url(args, options),
     method: 'head',
 })
@@ -461,7 +461,7 @@ reportCardDetail.head = (args: { reportCard: string | number | { id: string | nu
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-    const reportCardDetailForm = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const reportCardDetailForm = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: reportCardDetail.url(args, options),
         method: 'get',
     })
@@ -471,7 +471,7 @@ reportCardDetail.head = (args: { reportCard: string | number | { id: string | nu
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-        reportCardDetailForm.get = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        reportCardDetailForm.get = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: reportCardDetail.url(args, options),
             method: 'get',
         })
@@ -480,7 +480,7 @@ reportCardDetail.head = (args: { reportCard: string | number | { id: string | nu
  * @see app/Http/Controllers/ParentPortalController.php:259
  * @route '/parent/report-cards/{reportCard}'
  */
-        reportCardDetailForm.head = (args: { reportCard: string | number | { id: string | number } } | [reportCard: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        reportCardDetailForm.head = (args: { reportCard: number | { id: number } } | [reportCard: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: reportCardDetail.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -574,7 +574,7 @@ announcements.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => (
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-export const announcementDetail = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const announcementDetail = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: announcementDetail.url(args, options),
     method: 'get',
 })
@@ -589,7 +589,7 @@ announcementDetail.definition = {
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-announcementDetail.url = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+announcementDetail.url = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { announcement: args }
     }
@@ -622,7 +622,7 @@ announcementDetail.url = (args: { announcement: string | number | { id: string |
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-announcementDetail.get = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+announcementDetail.get = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: announcementDetail.url(args, options),
     method: 'get',
 })
@@ -631,7 +631,7 @@ announcementDetail.get = (args: { announcement: string | number | { id: string |
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-announcementDetail.head = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+announcementDetail.head = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: announcementDetail.url(args, options),
     method: 'head',
 })
@@ -641,7 +641,7 @@ announcementDetail.head = (args: { announcement: string | number | { id: string 
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-    const announcementDetailForm = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const announcementDetailForm = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: announcementDetail.url(args, options),
         method: 'get',
     })
@@ -651,7 +651,7 @@ announcementDetail.head = (args: { announcement: string | number | { id: string 
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-        announcementDetailForm.get = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        announcementDetailForm.get = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: announcementDetail.url(args, options),
             method: 'get',
         })
@@ -660,7 +660,7 @@ announcementDetail.head = (args: { announcement: string | number | { id: string 
  * @see app/Http/Controllers/ParentPortalController.php:304
  * @route '/parent/announcements/{announcement}'
  */
-        announcementDetailForm.head = (args: { announcement: string | number | { id: string | number } } | [announcement: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        announcementDetailForm.head = (args: { announcement: number | { id: number } } | [announcement: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: announcementDetail.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',

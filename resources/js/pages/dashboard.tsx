@@ -247,7 +247,7 @@ export default function Dashboard() {
                 />
             </Head>
 
-            <div style={{ padding: '20px 16px 32px', maxWidth: '1200px', margin: '0 auto', fontFamily: "'Inter', sans-serif" }}>
+            <div className="px-4 py-5 sm:px-5 md:px-6 max-w-[1200px] mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
                 {/* Welcome Card */}
                 <div
                     className="animate-m3-fade"
@@ -295,7 +295,7 @@ export default function Dashboard() {
                 {/* Stats Grid */}
                 <div style={{ marginBottom: '24px' }}>
                     <h2 style={{ fontSize: '12px', fontWeight: 600, color: '#999', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '12px', paddingLeft: '4px' }}>RINGKASAN</h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px' }}>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                         <StatCard
                             label="Total Siswa"
                             value={stats?.totalStudents || 0}
@@ -339,7 +339,7 @@ export default function Dashboard() {
                 {/* Quick Actions */}
                 <div style={{ marginBottom: '24px' }}>
                     <h2 style={{ fontSize: '12px', fontWeight: 600, color: '#999', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '12px', paddingLeft: '4px' }}>AKSI CEPAT</h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '10px' }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                         <QuickAction
                             icon={Users}
                             title="Data Siswa"
@@ -390,7 +390,7 @@ export default function Dashboard() {
                 </div>
 
                 {/* Two Column Layout */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     {/* Top Subjects */}
                     <div style={{
                         backgroundColor: '#fff',

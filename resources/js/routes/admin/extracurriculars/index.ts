@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-export const edit = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-edit.url = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+edit.url = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { extracurricular: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { extracurricular: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-edit.get = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { extracurricular: string | number | { id: string | number } }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-edit.head = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { extracurricular: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-    const editForm = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { extracurricular: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-        editForm.get = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { extracurricular: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:62
  * @route '/admin/extracurriculars/{extracurricular}/edit'
  */
-        editForm.head = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { extracurricular: string | number | { id: string | number } 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:99
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-export const update = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:99
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-update.url = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+update.url = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { extracurricular: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { extracurricular: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:99
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-update.put = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { extracurricular: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:99
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-    const updateForm = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { extracurricular: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:99
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-        updateForm.put = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { extracurricular: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:117
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-export const destroy = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:117
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-destroy.url = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { extracurricular: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { extracurricular: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:117
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-destroy.delete = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { extracurricular: string | number | { id: string | numb
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:117
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-    const destroyForm = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { extracurricular: string | number | { id: string | numb
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:117
  * @route '/admin/extracurriculars/{extracurricular}'
  */
-        destroyForm.delete = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',
@@ -495,7 +495,7 @@ destroy.delete = (args: { extracurricular: string | number | { id: string | numb
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:125
  * @route '/admin/extracurriculars/{extracurricular}/enroll'
  */
-export const enroll = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const enroll = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: enroll.url(args, options),
     method: 'post',
 })
@@ -510,7 +510,7 @@ enroll.definition = {
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:125
  * @route '/admin/extracurriculars/{extracurricular}/enroll'
  */
-enroll.url = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+enroll.url = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { extracurricular: args }
     }
@@ -543,7 +543,7 @@ enroll.url = (args: { extracurricular: string | number | { id: string | number }
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:125
  * @route '/admin/extracurriculars/{extracurricular}/enroll'
  */
-enroll.post = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+enroll.post = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: enroll.url(args, options),
     method: 'post',
 })
@@ -553,7 +553,7 @@ enroll.post = (args: { extracurricular: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:125
  * @route '/admin/extracurriculars/{extracurricular}/enroll'
  */
-    const enrollForm = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const enrollForm = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: enroll.url(args, options),
         method: 'post',
     })
@@ -563,7 +563,7 @@ enroll.post = (args: { extracurricular: string | number | { id: string | number 
  * @see app/Http/Controllers/Admin/ExtracurricularController.php:125
  * @route '/admin/extracurriculars/{extracurricular}/enroll'
  */
-        enrollForm.post = (args: { extracurricular: string | number | { id: string | number } } | [extracurricular: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        enrollForm.post = (args: { extracurricular: number | { id: number } } | [extracurricular: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: enroll.url(args, options),
             method: 'post',
         })
