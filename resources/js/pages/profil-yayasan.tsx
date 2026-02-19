@@ -18,6 +18,8 @@ import {
     Menu,
     X,
     Quote,
+    Award,
+    Trophy,
 } from 'lucide-react';
 
 type ProfileContents = Record<string, Record<string, string>>;
@@ -292,6 +294,39 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                     }
                     .yp-quote-icon {
                         animation: yp-floatQuote 4s ease-in-out infinite;
+                    }
+
+                    /* ===== Prestasi Section ===== */
+                    .yp-prestasi-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 32px;
+                        align-items: center;
+                    }
+                    @media (min-width: 768px) {
+                        .yp-prestasi-grid {
+                            grid-template-columns: 1fr 1fr;
+                            gap: 48px;
+                        }
+                    }
+                    .yp-prestasi-img {
+                        width: 100%;
+                        height: 320px;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    @media (min-width: 640px) { .yp-prestasi-img { height: 400px; } }
+                    @media (min-width: 768px) { .yp-prestasi-img { height: 450px; } }
+                    @keyframes yp-shimmer {
+                        0% { background-position: -200% center; }
+                        100% { background-position: 200% center; }
+                    }
+                    .yp-trophy-shimmer {
+                        background: linear-gradient(90deg, #c8a951 0%, #e8d88a 25%, #c8a951 50%, #e8d88a 75%, #c8a951 100%);
+                        background-size: 200% auto;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        animation: yp-shimmer 3s linear infinite;
                     }
                 `}</style>
             </Head>
@@ -820,6 +855,144 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     </div>
                                 );
                             })}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Prestasi Section */}
+                <section className="yp-section" style={{ backgroundColor: '#f5f3eb', position: 'relative', overflow: 'hidden' }}>
+                    {/* Decorative background elements */}
+                    <div style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.06, pointerEvents: 'none' }}>
+                        <Trophy size={200} color="#0d6e3f" />
+                    </div>
+                    <div style={{ position: 'absolute', bottom: '40px', left: '40px', opacity: 0.04, pointerEvents: 'none' }}>
+                        <Award size={160} color="#c8a951" />
+                    </div>
+
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px', position: 'relative', zIndex: 10 }}>
+                        {/* Section Header */}
+                        <div className="yp-fadeInUp" style={{ textAlign: 'center', marginBottom: '56px' }}>
+                            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(13,110,63,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
+                                <Trophy size={16} color="#0d6e3f" />
+                                <span style={{ fontSize: '14px', fontWeight: 500, color: '#0d6e3f' }}>Prestasi Santri</span>
+                            </div>
+                            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 700, color: '#0a5832', marginBottom: '16px' }}>
+                                Prestasi Membanggakan
+                            </h2>
+                            <p style={{ color: '#888', maxWidth: '640px', margin: '0 auto', fontSize: '18px' }}>
+                                Pencapaian santri-santri terbaik Yayasan RQ Syababul Khair
+                            </p>
+                        </div>
+
+                        {/* Content Grid */}
+                        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                            <div className="yp-prestasi-grid">
+                                {/* Photo Column */}
+                                <div className="yp-fadeInLeft">
+                                    <div className="yp-photo" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.12)', border: '2px solid rgba(200,169,81,0.3)', position: 'relative' }}>
+                                        <img
+                                            src="/images/prestasi-khatam.jpg"
+                                            alt="Santri yang telah khatam hafalan 1 Juz Al-Qur'an"
+                                            className="yp-prestasi-img"
+                                        />
+                                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75), transparent)', padding: '24px' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <Award size={20} color="#c8a951" />
+                                                <p style={{ color: '#c8a951', fontWeight: 600, fontSize: '14px', margin: 0, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Khatam 1 Juz</p>
+                                            </div>
+                                            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: '4px 0 0' }}>Yayasan RQ Syababul Khair</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Names Column */}
+                                <div className="yp-fadeInRight" style={{ animationDelay: '0.2s' }}>
+                                    <div style={{
+                                        backgroundColor: '#fff',
+                                        borderRadius: '24px',
+                                        padding: '32px',
+                                        boxShadow: '0 10px 40px rgba(0,0,0,0.06)',
+                                        border: '1px solid rgba(0,0,0,0.06)',
+                                    }}>
+                                        {/* Achievement Title */}
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '28px' }}>
+                                            <div style={{
+                                                width: '56px',
+                                                height: '56px',
+                                                borderRadius: '16px',
+                                                background: 'linear-gradient(135deg, #c8a951, #e0c76e)',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                boxShadow: '0 8px 24px rgba(200,169,81,0.25)',
+                                                flexShrink: 0,
+                                            }}>
+                                                <Trophy size={28} color="#0a5832" />
+                                            </div>
+                                            <div>
+                                                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0a5832', margin: 0, lineHeight: 1.3 }}>
+                                                    Khatam Hafalan 1 Juz
+                                                </h3>
+                                                <p style={{ color: '#888', fontSize: '14px', margin: '2px 0 0' }}>Al-Qur&apos;an &mdash; 5 Santri Berprestasi</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Student List */}
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                            {[
+                                                'Ikhsan Salfath Rambe',
+                                                'Anisa Nur Ayu',
+                                                'Asyfa Cordelia Darussalam',
+                                                'Muhammad Azzam Fahlevi',
+                                                'Shyren Putri Rendrano',
+                                            ].map((name, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="yp-fadeInUp"
+                                                    style={{
+                                                        animationDelay: `${0.3 + i * 0.08}s`,
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '16px',
+                                                        padding: '14px 16px',
+                                                        borderRadius: '16px',
+                                                        backgroundColor: i === 0 ? 'rgba(13,110,63,0.06)' : 'rgba(0,0,0,0.02)',
+                                                        border: i === 0 ? '1px solid rgba(13,110,63,0.12)' : '1px solid transparent',
+                                                        transition: 'all 0.3s',
+                                                    }}
+                                                >
+                                                    <div style={{
+                                                        width: '36px',
+                                                        height: '36px',
+                                                        minWidth: '36px',
+                                                        borderRadius: '12px',
+                                                        background: i === 0
+                                                            ? 'linear-gradient(135deg, #c8a951, #e0c76e)'
+                                                            : 'linear-gradient(135deg, #0d6e3f, #15a060)',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        boxShadow: i === 0 ? '0 4px 12px rgba(200,169,81,0.3)' : '0 4px 12px rgba(13,110,63,0.2)',
+                                                    }}>
+                                                        <span style={{ color: '#fff', fontSize: '14px', fontWeight: 700 }}>{i + 1}</span>
+                                                    </div>
+                                                    <div style={{ flex: 1 }}>
+                                                        <p style={{ margin: 0, fontWeight: 600, color: '#0a5832', fontSize: '15px' }}>{name}</p>
+                                                    </div>
+                                                    <Award size={16} color={i === 0 ? '#c8a951' : '#0d6e3f'} style={{ opacity: 0.6 }} />
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Bottom note */}
+                                        <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid rgba(0,0,0,0.06)', textAlign: 'center' }}>
+                                            <p style={{ color: '#888', fontSize: '13px', fontStyle: 'italic', margin: 0 }}>
+                                                Semoga menjadi inspirasi dan motivasi bagi santri lainnya 🌟
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
