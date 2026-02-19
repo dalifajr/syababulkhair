@@ -143,6 +143,10 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         0%, 100% { transform: translateY(0) translateX(-50%); }
                         50% { transform: translateY(8px) translateX(-50%); }
                     }
+                    @keyframes yp-slideDown {
+                        from { opacity: 0; max-height: 0; }
+                        to { opacity: 1; max-height: 500px; }
+                    }
 
                     .yp-fadeInUp { animation: yp-fadeInUp 0.8s ease-out both; }
                     .yp-fadeInLeft { animation: yp-fadeInLeft 0.8s ease-out both; }
@@ -159,6 +163,79 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                     .yp-photo img { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
                     .yp-photo:hover img { transform: scale(1.08); }
                     .yp-divider { height: 4px; background: linear-gradient(90deg, transparent, #c8a951, #0d6e3f, #c8a951, transparent); }
+
+                    /* ===== Responsive Navbar ===== */
+                    .yp-desktop-nav { display: none; }
+                    .yp-mobile-menu-btn { display: block; }
+                    .yp-mobile-dropdown { animation: yp-slideDown 0.3s ease-out both; overflow: hidden; }
+
+                    @media (min-width: 1024px) {
+                        .yp-desktop-nav { display: flex !important; }
+                        .yp-mobile-menu-btn { display: none !important; }
+                        .yp-mobile-dropdown { display: none !important; }
+                    }
+
+                    /* ===== Responsive Location Grid ===== */
+                    .yp-location-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 24px;
+                    }
+                    @media (min-width: 768px) {
+                        .yp-location-grid {
+                            grid-template-columns: 3fr 2fr;
+                            gap: 32px;
+                        }
+                    }
+
+                    /* ===== Responsive Footer ===== */
+                    .yp-footer-inner {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 16px;
+                        text-align: center;
+                    }
+                    @media (min-width: 768px) {
+                        .yp-footer-inner {
+                            flex-direction: row;
+                            justify-content: space-between;
+                            text-align: left;
+                        }
+                    }
+
+                    /* ===== Responsive Map iframe ===== */
+                    .yp-map-frame { width: 100%; height: 300px; border: 0; display: block; }
+                    @media (min-width: 768px) { .yp-map-frame { height: 450px; } }
+
+                    /* ===== Responsive Gallery images ===== */
+                    .yp-gallery-img { width: 100%; height: 260px; object-fit: cover; display: block; }
+                    @media (min-width: 640px) { .yp-gallery-img { height: 350px; } }
+                    @media (min-width: 768px) { .yp-gallery-img { height: 400px; } }
+
+                    /* ===== Responsive About image ===== */
+                    .yp-about-img { width: 100%; height: 300px; object-fit: cover; display: block; }
+                    @media (min-width: 640px) { .yp-about-img { height: 380px; } }
+                    @media (min-width: 768px) { .yp-about-img { height: 450px; } }
+
+                    /* ===== Responsive Sections padding ===== */
+                    .yp-section { padding: 60px 0; }
+                    @media (min-width: 768px) { .yp-section { padding: 80px 0; } }
+
+                    /* ===== Responsive CTA buttons ===== */
+                    .yp-cta-buttons {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 12px;
+                    }
+                    @media (min-width: 640px) {
+                        .yp-cta-buttons {
+                            flex-direction: row;
+                            justify-content: center;
+                            gap: 16px;
+                        }
+                    }
                 `}</style>
             </Head>
 
@@ -197,8 +274,8 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </div>
                         </button>
 
-                        {/* Desktop Nav */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }} className="hidden lg:flex">
+                        {/* Desktop Nav - hidden on mobile via CSS */}
+                        <div className="yp-desktop-nav" style={{ alignItems: 'center', gap: '4px' }}>
                             {navItems.map((item) => (
                                 <button
                                     key={item.id}
@@ -260,10 +337,10 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 E-Rapor
                             </Link>
 
-                            {/* Mobile Menu Button */}
+                            {/* Mobile Menu Button - visible on mobile via CSS */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="lg:hidden"
+                                className="yp-mobile-menu-btn"
                                 style={{
                                     padding: '8px',
                                     borderRadius: '50%',
@@ -278,28 +355,38 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         </div>
                     </div>
 
-                    {/* Mobile Menu */}
+                    {/* Mobile Menu Dropdown */}
                     {isMobileMenuOpen && (
-                        <div className="lg:hidden yp-glass" style={{ backgroundColor: 'rgba(255,255,255,0.95)', borderTop: '1px solid rgba(0,0,0,0.1)', padding: '16px' }}>
+                        <div className="yp-mobile-dropdown yp-glass" style={{ backgroundColor: 'rgba(255,255,255,0.97)', borderTop: '1px solid rgba(0,0,0,0.1)', padding: '12px 16px', boxShadow: '0 8px 32px rgba(0,0,0,0.12)' }}>
                             {navItems.map((item) => (
                                 <button
                                     key={item.id}
                                     onClick={() => scrollToSection(item.id)}
                                     style={{
-                                        display: 'block',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '12px',
                                         width: '100%',
                                         textAlign: 'left',
-                                        padding: '12px 16px',
-                                        borderRadius: '12px',
-                                        fontSize: '14px',
+                                        padding: '14px 16px',
+                                        borderRadius: '16px',
+                                        fontSize: '15px',
                                         fontWeight: 500,
                                         border: 'none',
                                         cursor: 'pointer',
-                                        marginBottom: '4px',
+                                        marginBottom: '2px',
+                                        transition: 'all 0.2s',
                                         backgroundColor: activeSection === item.id ? '#0d6e3f' : 'transparent',
-                                        color: activeSection === item.id ? '#fff' : '#555',
+                                        color: activeSection === item.id ? '#fff' : '#333',
                                     }}
                                 >
+                                    <span style={{
+                                        width: '8px',
+                                        height: '8px',
+                                        borderRadius: '50%',
+                                        backgroundColor: activeSection === item.id ? '#c8a951' : 'rgba(0,0,0,0.15)',
+                                        flexShrink: 0,
+                                    }} />
                                     {item.label}
                                 </button>
                             ))}
@@ -319,7 +406,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         <div className="yp-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.3 }} />
                     </div>
 
-                    <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '960px', margin: '0 auto' }} className="px-4 sm:px-6">
+                    <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '960px', margin: '0 auto', padding: '0 16px' }}>
                         {/* Logo */}
                         <div className="yp-scaleIn" style={{ marginBottom: '32px' }}>
                             <div className="yp-pulseGlow" style={{ display: 'inline-block', borderRadius: '50%' }}>
@@ -350,15 +437,16 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="yp-fadeInUp flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-4" style={{ animationDelay: '0.3s' }}>
+                        <div className="yp-fadeInUp yp-cta-buttons" style={{ animationDelay: '0.3s' }}>
                             <button
                                 onClick={() => scrollToSection('tentang')}
-                                className="text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4"
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     gap: '8px',
+                                    padding: '14px 28px',
+                                    fontSize: '15px',
                                     backgroundColor: '#c8a951',
                                     color: '#0a5832',
                                     borderRadius: '50px',
@@ -367,6 +455,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     cursor: 'pointer',
                                     boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
                                     transition: 'all 0.3s',
+                                    width: 'fit-content',
                                 }}
                             >
                                 Jelajahi Profil
@@ -374,12 +463,13 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </button>
                             <Link
                                 href="/login"
-                                className="text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4"
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     gap: '8px',
+                                    padding: '12px 28px',
+                                    fontSize: '15px',
                                     border: '2px solid rgba(255,255,255,0.3)',
                                     color: '#fff',
                                     borderRadius: '50px',
@@ -387,6 +477,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     textDecoration: 'none',
                                     transition: 'all 0.3s',
                                     backgroundColor: 'transparent',
+                                    width: 'fit-content',
                                 }}
                             >
                                 <GraduationCap size={20} />
@@ -405,8 +496,8 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 <div className="yp-divider" />
 
                 {/* About Section */}
-                <section id="tentang" style={{ padding: '80px 0', position: 'relative' }} className="px-4 md:px-6">
-                    <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+                <section id="tentang" className="yp-section" style={{ position: 'relative', padding: undefined }} >
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }}>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                             <div className="yp-fadeInLeft">
                                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(13,110,63,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
@@ -442,7 +533,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                         <img
                                             src={getContent('about', 'about_image', '/images/yayasan-foto-2.jpg')}
                                             alt="Kegiatan santri di Yayasan RQ Syababul Khair"
-                                            style={{ width: '100%', height: '450px', objectFit: 'cover', display: 'block' }}
+                                            className="yp-about-img"
                                         />
                                         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)', padding: '24px' }}>
                                             <p style={{ color: '#fff', fontWeight: 500, fontSize: '18px', margin: 0 }}>Kegiatan Santri</p>
@@ -456,9 +547,9 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 </section>
 
                 {/* Vision & Mission Section */}
-                <section id="visi-misi" style={{ padding: '80px 0', backgroundColor: '#0a5832', position: 'relative', overflow: 'hidden' }}>
+                <section id="visi-misi" className="yp-section" style={{ backgroundColor: '#0a5832', position: 'relative', overflow: 'hidden' }}>
                     <div className="yp-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.2 }} />
-                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10 }}>
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px', position: 'relative', zIndex: 10 }}>
                         <div className="yp-fadeInUp" style={{ textAlign: 'center', marginBottom: '64px' }}>
                             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(255,255,255,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
                                 <Target size={16} color="#c8a951" />
@@ -520,8 +611,8 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 </section>
 
                 {/* Programs Section */}
-                <section style={{ padding: '80px 0' }}>
-                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+                <section className="yp-section">
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }}>
                         <div className="yp-fadeInUp" style={{ textAlign: 'center', marginBottom: '64px' }}>
                             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(13,110,63,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
                                 <Star size={16} color="#0d6e3f" />
@@ -578,8 +669,8 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 </section>
 
                 {/* Gallery Section */}
-                <section id="galeri" style={{ padding: '80px 0', backgroundColor: '#f5f3eb' }}>
-                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+                <section id="galeri" className="yp-section" style={{ backgroundColor: '#f5f3eb' }}>
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }}>
                         <div className="yp-fadeInUp" style={{ textAlign: 'center', marginBottom: '64px' }}>
                             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(13,110,63,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
                                 <Heart size={16} color="#0d6e3f" />
@@ -599,7 +690,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     <img
                                         src={getContent('gallery', 'gallery_1', '/images/yayasan-foto-1.jpg')}
                                         alt="Kegiatan bersama santri dan KKN"
-                                        style={{ width: '100%', height: '400px', objectFit: 'cover', display: 'block' }}
+                                        className="yp-gallery-img"
                                     />
                                     <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)', padding: '24px' }}>
                                         <p style={{ color: '#fff', fontWeight: 600, fontSize: '18px', margin: 0 }}>{getContent('gallery', 'gallery_1_title', 'KKN Angkatan 84 - Sungai Pinang')}</p>
@@ -613,7 +704,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     <img
                                         src={getContent('gallery', 'gallery_2', '/images/yayasan-foto-2.jpg')}
                                         alt="Kegiatan malam yang penuh kebersamaan"
-                                        style={{ width: '100%', height: '400px', objectFit: 'cover', display: 'block' }}
+                                        className="yp-gallery-img"
                                     />
                                     <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)', padding: '24px' }}>
                                         <p style={{ color: '#fff', fontWeight: 600, fontSize: '18px', margin: 0 }}>{getContent('gallery', 'gallery_2_title', 'Kebersamaan Santri')}</p>
@@ -626,8 +717,8 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 </section>
 
                 {/* Location Section */}
-                <section id="lokasi" style={{ padding: '80px 0' }}>
-                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+                <section id="lokasi" className="yp-section">
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }}>
                         <div className="yp-fadeInUp" style={{ textAlign: 'center', marginBottom: '64px' }}>
                             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(13,110,63,0.1)', padding: '8px 16px', borderRadius: '50px', marginBottom: '24px' }}>
                                 <MapPin size={16} color="#0d6e3f" />
@@ -641,14 +732,12 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[3fr_2fr]">
+                        <div className="yp-location-grid">
                             <div className="yp-fadeInLeft">
                                 <div style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.15)', border: '2px solid rgba(0,0,0,0.08)' }}>
                                     <iframe
                                         src={getContent('location', 'location_maps_embed', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.5!2d104.8272009!3d-3.0559892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9dc9729d1b81%3A0x482ca8c781d80889!2sRumah%20Qur'an%20Syababul%20Khair!5e0!3m2!1sid!2sid!4v1707600000000!5m2!1sid!2sid")}
-                                        width="100%"
-                                        height="450"
-                                        style={{ border: 0, display: 'block' }}
+                                        className="yp-map-frame"
                                         allowFullScreen
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
@@ -726,9 +815,9 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                 </section>
 
                 {/* CTA Section */}
-                <section id="kontak" style={{ padding: '80px 0', background: 'linear-gradient(135deg, #0a5832 0%, #0d6e3f 50%, #0a5832 100%)', position: 'relative', overflow: 'hidden' }}>
+                <section id="kontak" className="yp-section" style={{ background: 'linear-gradient(135deg, #0a5832 0%, #0d6e3f 50%, #0a5832 100%)', position: 'relative', overflow: 'hidden' }}>
                     <div className="yp-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.15 }} />
-                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10, textAlign: 'center' }}>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px', position: 'relative', zIndex: 10, textAlign: 'center' }}>
                         <div className="yp-fadeInUp">
                             <div style={{ marginBottom: '32px' }}>
                                 <img
@@ -794,7 +883,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
 
                 {/* Footer */}
                 <footer style={{ backgroundColor: '#0a5832', borderTop: '1px solid rgba(255,255,255,0.1)', padding: '32px 0' }}>
-                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '16px' }} className="flex-col sm:flex-row sm:justify-between">
+                    <div className="yp-footer-inner" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                             <img
                                 src="/images/yayasan-logo.png"

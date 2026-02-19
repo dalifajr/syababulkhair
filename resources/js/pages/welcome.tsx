@@ -5,7 +5,6 @@ import {
     CheckCircle,
     GraduationCap,
     LayoutDashboard,
-    Menu,
     Moon,
     Shield,
     Sun,
@@ -14,7 +13,6 @@ import {
     Calendar,
     Award,
     ArrowRight,
-    X,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -31,7 +29,6 @@ export default function Welcome({ canRegister }: Props) {
             : false,
     );
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -116,7 +113,7 @@ export default function Welcome({ canRegister }: Props) {
                         : 'bg-transparent'
                         }`}
                 >
-                    <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+                    <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
                         <Link
                             href={home()}
                             className="flex items-center gap-3"
@@ -129,8 +126,7 @@ export default function Welcome({ canRegister }: Props) {
                             </span>
                         </Link>
 
-                        {/* Desktop Navigation */}
-                        <div className="hidden items-center gap-3 md:flex">
+                        <div className="flex items-center gap-3">
                             <Button
                                 variant="ghost"
                                 size="icon"
@@ -159,71 +155,15 @@ export default function Welcome({ canRegister }: Props) {
                                 </Link>
                             )}
                         </div>
-
-                        {/* Mobile Menu Button */}
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="rounded-xl md:hidden"
-                        >
-                            {isMobileMenuOpen ? (
-                                <X className="h-5 w-5" />
-                            ) : (
-                                <Menu className="h-5 w-5" />
-                            )}
-                        </Button>
-                    </div>
-
-                    {/* Mobile Menu Panel */}
-                    <div
-                        className={`overflow-hidden border-t border-border/30 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden ${isMobileMenuOpen
-                                ? 'max-h-60 opacity-100'
-                                : 'max-h-0 opacity-0 border-t-0'
-                            }`}
-                        style={{ backgroundColor: isScrolled ? 'rgba(255,255,255,0.95)' : 'rgba(0,0,0,0.3)' }}
-                    >
-                        <div className="flex flex-col gap-2 px-4 py-4">
-                            <div className="flex items-center justify-between">
-                                <span className={`text-sm font-medium ${isScrolled ? 'text-muted-foreground' : 'text-white/70'}`}>Tema</span>
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    onClick={toggleDarkMode}
-                                    className="rounded-xl"
-                                >
-                                    {isDark ? (
-                                        <Sun className="h-5 w-5" />
-                                    ) : (
-                                        <Moon className="h-5 w-5" />
-                                    )}
-                                </Button>
-                            </div>
-                            <Link href={login()} className="w-full">
-                                <Button
-                                    variant="ghost"
-                                    className="w-full justify-center rounded-xl"
-                                >
-                                    Masuk
-                                </Button>
-                            </Link>
-                            {canRegister && (
-                                <Link href={register()} className="w-full">
-                                    <Button className="w-full justify-center rounded-xl">
-                                        Daftar
-                                    </Button>
-                                </Link>
-                            )}
-                        </div>
                     </div>
                 </nav>
 
                 {/* Hero Section */}
-                <section className="relative flex min-h-screen items-center overflow-hidden px-4 pt-24 sm:px-6 sm:pt-20">
+                <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-20">
                     {/* Background gradient */}
                     <div className="absolute inset-0 -z-10">
-                        <div className="animate-m3-gradient absolute -left-1/4 -top-1/4 h-[300px] w-[300px] rounded-full bg-gradient-to-br from-primary/20 via-tertiary/10 to-transparent blur-3xl sm:h-[600px] sm:w-[600px]" />
-                        <div className="animate-m3-gradient absolute -bottom-1/4 -right-1/4 h-[300px] w-[300px] rounded-full bg-gradient-to-tl from-tertiary/20 via-primary/10 to-transparent blur-3xl sm:h-[600px] sm:w-[600px]" />
+                        <div className="animate-m3-gradient absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/20 via-tertiary/10 to-transparent blur-3xl" />
+                        <div className="animate-m3-gradient absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-tl from-tertiary/20 via-primary/10 to-transparent blur-3xl" />
                     </div>
 
                     <div className="mx-auto max-w-7xl">
@@ -234,7 +174,7 @@ export default function Welcome({ canRegister }: Props) {
                                     <span>Sistem Penilaian Modern</span>
                                 </div>
 
-                                <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+                                <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
                                     Kelola Penilaian Siswa dengan{' '}
                                     <span className="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
                                         Mudah & Efisien
@@ -437,7 +377,7 @@ export default function Welcome({ canRegister }: Props) {
                 {/* CTA Section */}
                 <section className="py-24">
                     <div className="mx-auto max-w-7xl px-6">
-                        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-8 text-center text-primary-foreground sm:p-12 md:p-20">
+                        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-12 text-center text-primary-foreground md:p-20">
                             <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
                             <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
