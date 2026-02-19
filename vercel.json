@@ -1,7 +1,6 @@
 {
     "version": 2,
     "buildCommand": "npm install && npm run build && echo 'Build completed'",
-    "outputDirectory": ".",
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.2",
@@ -11,6 +10,9 @@
         }
     },
     "routes": [
+        {
+            "handle": "filesystem"
+        },
         {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
