@@ -116,25 +116,30 @@ class AchievementPostController extends Controller
      */
     private function compressAndStoreImage($file, string $folder): string
     {
-        $filename = uniqid($folder . '_') . '.jpg';
+        // If GD is not available, store without compression
+        if (!\extension_loaded('gd')) {
+            return $file->store("uploads/{$folder}", 'public');
+        }
+
+        $filename = \uniqid($folder . '_') . '.jpg';
         $path = "uploads/{$folder}/{$filename}";
 
-        $imageInfo = getimagesize($file->getPathname());
+        $imageInfo = \getimagesize($file->getPathname());
         $mime = $imageInfo['mime'] ?? '';
 
         $sourceImage = match ($mime) {
-            'image/jpeg' => imagecreatefromjpeg($file->getPathname()),
-            'image/png' => imagecreatefrompng($file->getPathname()),
-            'image/webp' => imagecreatefromwebp($file->getPathname()),
-            default => imagecreatefromjpeg($file->getPathname()),
+            'image/jpeg' => \imagecreatefromjpeg($file->getPathname()),
+            'image/png' => \imagecreatefrompng($file->getPathname()),
+            'image/webp' => \imagecreatefromwebp($file->getPathname()),
+            default => \imagecreatefromjpeg($file->getPathname()),
         };
 
         if (!$sourceImage) {
             return $file->store("uploads/{$folder}", 'public');
         }
 
-        $origWidth = imagesx($sourceImage);
-        $origHeight = imagesy($sourceImage);
+        $origWidth = \imagesx($sourceImage);
+        $origHeight = \imagesy($sourceImage);
 
         $maxWidth = 1200;
         $maxHeight = 900;
@@ -143,25 +148,25 @@ class AchievementPostController extends Controller
         $newWidth = (int) ($origWidth * $ratio);
         $newHeight = (int) ($origHeight * $ratio);
 
-        $newImage = imagecreatetruecolor($newWidth, $newHeight);
+        $newImage = \imagecreatetruecolor($newWidth, $newHeight);
 
         if ($mime === 'image/png') {
-            $white = imagecolorallocate($newImage, 255, 255, 255);
-            imagefill($newImage, 0, 0, $white);
+            $white = \imagecolorallocate($newImage, 255, 255, 255);
+            \imagefill($newImage, 0, 0, $white);
         }
 
-        imagecopyresampled($newImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
+        \imagecopyresampled($newImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 
-        $fullDir = storage_path("app/public/uploads/{$folder}");
-        if (!is_dir($fullDir)) {
-            mkdir($fullDir, 0755, true);
+        $fullDir = \storage_path("app/public/uploads/{$folder}");
+        if (!\is_dir($fullDir)) {
+            \mkdir($fullDir, 0755, true);
         }
 
-        $fullPath = storage_path("app/public/{$path}");
-        imagejpeg($newImage, $fullPath, 75);
+        $fullPath = \storage_path("app/public/{$path}");
+        \imagejpeg($newImage, $fullPath, 75);
 
-        imagedestroy($sourceImage);
-        imagedestroy($newImage);
+        \imagedestroy($sourceImage);
+        \imagedestroy($newImage);
 
         return $path;
     }

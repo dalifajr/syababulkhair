@@ -117,19 +117,24 @@ class GalleryPostController extends Controller
      */
     private function compressAndStoreImage($file, string $folder): string
     {
-        $filename = uniqid($folder . '_') . '.jpg';
+        // If GD is not available, store without compression
+        if (!\extension_loaded('gd')) {
+            return $file->store("uploads/{$folder}", 'public');
+        }
+
+        $filename = \uniqid($folder . '_') . '.jpg';
         $path = "uploads/{$folder}/{$filename}";
 
         // Get image info
-        $imageInfo = getimagesize($file->getPathname());
+        $imageInfo = \getimagesize($file->getPathname());
         $mime = $imageInfo['mime'] ?? '';
 
         // Create image resource based on type
         $sourceImage = match ($mime) {
-            'image/jpeg' => imagecreatefromjpeg($file->getPathname()),
-            'image/png' => imagecreatefrompng($file->getPathname()),
-            'image/webp' => imagecreatefromwebp($file->getPathname()),
-            default => imagecreatefromjpeg($file->getPathname()),
+            'image/jpeg' => \imagecreatefromjpeg($file->getPathname()),
+            'image/png' => \imagecreatefrompng($file->getPathname()),
+            'image/webp' => \imagecreatefromwebp($file->getPathname()),
+            default => \imagecreatefromjpeg($file->getPathname()),
         };
 
         if (!$sourceImage) {
@@ -138,8 +143,8 @@ class GalleryPostController extends Controller
         }
 
         // Get original dimensions
-        $origWidth = imagesx($sourceImage);
-        $origHeight = imagesy($sourceImage);
+        $origWidth = \imagesx($sourceImage);
+        $origHeight = \imagesy($sourceImage);
 
         // Maximum dimensions (1200px wide)
         $maxWidth = 1200;
@@ -151,30 +156,30 @@ class GalleryPostController extends Controller
         $newHeight = (int) ($origHeight * $ratio);
 
         // Create new image
-        $newImage = imagecreatetruecolor($newWidth, $newHeight);
+        $newImage = \imagecreatetruecolor($newWidth, $newHeight);
 
         // Handle transparency for PNG
         if ($mime === 'image/png') {
-            $white = imagecolorallocate($newImage, 255, 255, 255);
-            imagefill($newImage, 0, 0, $white);
+            $white = \imagecolorallocate($newImage, 255, 255, 255);
+            \imagefill($newImage, 0, 0, $white);
         }
 
         // Resize
-        imagecopyresampled($newImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
+        \imagecopyresampled($newImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 
         // Ensure directory exists
-        $fullDir = storage_path("app/public/uploads/{$folder}");
-        if (!is_dir($fullDir)) {
-            mkdir($fullDir, 0755, true);
+        $fullDir = \storage_path("app/public/uploads/{$folder}");
+        if (!\is_dir($fullDir)) {
+            \mkdir($fullDir, 0755, true);
         }
 
         // Save as JPEG with 75% quality (good balance of quality vs size)
-        $fullPath = storage_path("app/public/{$path}");
-        imagejpeg($newImage, $fullPath, 75);
+        $fullPath = \storage_path("app/public/{$path}");
+        \imagejpeg($newImage, $fullPath, 75);
 
         // Free memory
-        imagedestroy($sourceImage);
-        imagedestroy($newImage);
+        \imagedestroy($sourceImage);
+        \imagedestroy($newImage);
 
         return $path;
     }
