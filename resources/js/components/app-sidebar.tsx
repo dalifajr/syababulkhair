@@ -24,6 +24,8 @@ import {
     Database,
     Target,
     NotebookPen,
+    Camera,
+    Medal,
 } from 'lucide-react';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -161,6 +163,25 @@ const adminCommunicationItems: NavItem[] = [
     },
 ];
 
+// Menu admin - Profil Website
+const adminProfilItems: NavItem[] = [
+    {
+        title: 'Kelola Profil Web',
+        href: '/admin/profile-content',
+        icon: Globe,
+    },
+    {
+        title: 'Dokumentasi Kegiatan',
+        href: '/admin/gallery-posts',
+        icon: Camera,
+    },
+    {
+        title: 'Prestasi Membanggakan',
+        href: '/admin/achievement-posts',
+        icon: Medal,
+    },
+];
+
 // Menu admin - Laporan
 const adminReportItems: NavItem[] = [
     {
@@ -182,11 +203,6 @@ const adminReportItems: NavItem[] = [
 
 // Menu pengaturan
 const settingsNavItems: NavItem[] = [
-    {
-        title: 'Kelola Profil Web',
-        href: '/admin/profile-content',
-        icon: Globe,
-    },
     {
         title: 'Pengaturan Sekolah',
         href: '/admin/settings',
@@ -302,6 +318,16 @@ export function AppSidebar() {
                             Laporan
                         </SidebarGroupLabel>
                         <NavMain items={adminReportItems} />
+                    </SidebarGroup>
+                )}
+
+                {/* Menu Admin - Profil Website */}
+                {isAdmin && (
+                    <SidebarGroup>
+                        <SidebarGroupLabel className="text-xs font-medium text-muted-foreground">
+                            Profil Website
+                        </SidebarGroupLabel>
+                        <NavMain items={adminProfilItems} />
                     </SidebarGroup>
                 )}
 

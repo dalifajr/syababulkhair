@@ -1,4 +1,6 @@
 import profileContent from './profile-content'
+import galleryPosts from './gallery-posts'
+import achievementPosts from './achievement-posts'
 import students from './students'
 import subjects from './subjects'
 import classGroups from './class-groups'
@@ -19,6 +21,8 @@ import backup from './backup'
 import behavioralNotes from './behavioral-notes'
 const admin = {
     profileContent: Object.assign(profileContent, profileContent),
+galleryPosts: Object.assign(galleryPosts, galleryPosts),
+achievementPosts: Object.assign(achievementPosts, achievementPosts),
 students: Object.assign(students, students),
 subjects: Object.assign(subjects, subjects),
 classGroups: Object.assign(classGroups, classGroups),

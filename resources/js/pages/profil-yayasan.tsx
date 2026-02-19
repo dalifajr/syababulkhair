@@ -109,10 +109,10 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
 
     return (
         <>
-            <Head title="Yayasan RQ Syababul Khair - Rumah Qur'an">
+            <Head title="Rumah Qur'an Syababul Khair - Rumah Qur'an">
                 <meta
                     name="description"
-                    content="Yayasan RQ Syababul Khair adalah lembaga pendidikan Al-Qur'an yang berkomitmen untuk membentuk generasi Qur'ani yang berakhlak mulia."
+                    content="Rumah Qur'an Syababul Khair adalah lembaga pendidikan Al-Qur'an yang berkomitmen untuk membentuk generasi Qur'ani yang berakhlak mulia."
                 />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -353,15 +353,15 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                         >
                             <img
                                 src="/images/yayasan-logo.png"
-                                alt="Logo Yayasan RQ Syababul Khair"
+                                alt="Logo Rumah Qur'an Syababul Khair"
                                 style={{ height: '40px', width: '40px', borderRadius: '50%', objectFit: 'cover' }}
                             />
                             <div>
                                 <p style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.2, color: isScrolled ? '#0d6e3f' : '#fff', margin: 0 }}>
-                                    Yayasan RQ
+                                    RQ Syababul
                                 </p>
                                 <p style={{ fontSize: '12px', color: isScrolled ? '#a88a3a' : '#e0c76e', margin: 0 }}>
-                                    Syababul Khair
+                                    Khair
                                 </p>
                             </div>
                         </button>
@@ -491,7 +491,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                     <div style={{ position: 'absolute', inset: 0 }}>
                         <img
                             src={getContent('hero', 'hero_background', '/images/yayasan-foto-1.jpg')}
-                            alt="Kegiatan Yayasan RQ Syababul Khair"
+                            alt="Kegiatan Rumah Qur'an Syababul Khair"
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                         <div className="yp-hero-overlay" style={{ position: 'absolute', inset: 0 }} />
@@ -504,7 +504,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                             <div className="yp-pulseGlow" style={{ display: 'inline-block', borderRadius: '50%' }}>
                                 <img
                                     src={getContent('hero', 'hero_logo', '/images/yayasan-logo.png')}
-                                    alt="Logo Yayasan RQ Syababul Khair"
+                                    alt="Logo Rumah Qur'an Syababul Khair"
                                     className="h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36"
                                     style={{
                                         borderRadius: '50%',
@@ -521,7 +521,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 {getContent('hero', 'hero_subtitle', "Rumah Qur'an")}
                             </p>
                             <h1 style={{ fontSize: 'clamp(2.2rem, 6vw, 4.5rem)', fontWeight: 700, color: '#fff', textShadow: '0 2px 20px rgba(0,0,0,0.3)', marginBottom: '24px', lineHeight: 1.1 }}>
-                                {getContent('hero', 'hero_title', 'Yayasan RQ Syababul Khair')}
+                                {getContent('hero', 'hero_title', "Rumah Qur'an Syababul Khair")}
                             </h1>
                             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '18px', maxWidth: '640px', margin: '0 auto 40px', lineHeight: 1.7 }}>
                                 {getContent('hero', 'hero_description', "Membentuk Generasi Qur'ani yang Berakhlak Mulia, Berwawasan Luas, dan Bermanfaat bagi Umat")}
@@ -600,7 +600,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     {getContent('about', 'about_title', "Rumah Qur'an Syababul Khair")}
                                 </h2>
                                 <p style={{ color: '#555', fontSize: '18px', lineHeight: 1.8, marginBottom: '24px' }}>
-                                    {getContent('about', 'about_text_1', "Yayasan RQ Syababul Khair adalah lembaga pendidikan Al-Qur'an yang berdedikasi dalam membina dan mendidik generasi muda untuk mencintai dan memahami Al-Qur'an.")}
+                                    {getContent('about', 'about_text_1', "Rumah Qur'an Syababul Khair adalah lembaga pendidikan Al-Qur'an yang berdedikasi dalam membina dan mendidik generasi muda untuk mencintai dan memahami Al-Qur'an.")}
                                 </p>
                                 <p style={{ color: '#555', fontSize: '18px', lineHeight: 1.8, marginBottom: '32px' }}>
                                     {getContent('about', 'about_text_2', "Dengan semangat kebersamaan dan keikhlasan, kami mengajak seluruh elemen masyarakat untuk bersinergi dalam mencetak generasi Qur'ani yang berakhlak mulia dan berwawasan luas.")}
@@ -624,12 +624,12 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                     <div className="yp-photo" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '2px solid #c8a951', boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
                                         <img
                                             src={getContent('about', 'about_image', '/images/yayasan-foto-2.jpg')}
-                                            alt="Kegiatan santri di Yayasan RQ Syababul Khair"
+                                            alt="Kegiatan santri di Rumah Qur'an Syababul Khair"
                                             className="yp-about-img"
                                         />
                                         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)', padding: '24px' }}>
                                             <p style={{ color: '#fff', fontWeight: 500, fontSize: '18px', margin: 0 }}>Kegiatan Santri</p>
-                                            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', margin: '4px 0 0' }}>Yayasan RQ Syababul Khair</p>
+                                            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', margin: '4px 0 0' }}>Rumah Qur'an Syababul Khair</p>
                                         </div>
                                     </div>
                                 </div>
@@ -656,7 +656,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 Kata Sambutan
                             </h2>
                             <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '640px', margin: '0 auto', fontSize: '18px' }}>
-                                Pesan dari Pimpinan Yayasan RQ Syababul Khair
+                                Pesan dari Pimpinan Rumah Qur'an Syababul Khair
                             </p>
                         </div>
 
@@ -678,7 +678,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                             {getContent('sambutan', 'sambutan_nama', 'Ustadz Aa Muhammad Iqbal, S.Pd.')}
                                         </p>
                                         <p style={{ color: '#c8a951', fontSize: '14px', fontWeight: 500, marginTop: '4px' }}>
-                                            {getContent('sambutan', 'sambutan_jabatan', 'Pimpinan Yayasan RQ Syababul Khair')}
+                                            {getContent('sambutan', 'sambutan_jabatan', "Pimpinan Rumah Qur'an Syababul Khair")}
                                         </p>
                                     </div>
                                 </div>
@@ -714,7 +714,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                                 {getContent('sambutan', 'sambutan_text_1', "Assalamu'alaikum Warahmatullahi Wabarakatuh.")}
                                             </p>
                                             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', lineHeight: 1.9, marginBottom: '16px' }}>
-                                                {getContent('sambutan', 'sambutan_text_2', "Segala puji bagi Allah SWT yang telah memberikan rahmat dan karunia-Nya. Alhamdulillah, Yayasan Rumah Qur'an Syababul Khair hadir di tengah-tengah masyarakat dengan semangat untuk mendidik generasi muda dalam mencintai, memahami, dan mengamalkan Al-Qur'an dalam kehidupan sehari-hari.")}
+                                                {getContent('sambutan', 'sambutan_text_2', "Segala puji bagi Allah SWT yang telah memberikan rahmat dan karunia-Nya. Alhamdulillah, Rumah Qur'an Syababul Khair hadir di tengah-tengah masyarakat dengan semangat untuk mendidik generasi muda dalam mencintai, memahami, dan mengamalkan Al-Qur'an dalam kehidupan sehari-hari.")}
                                             </p>
                                             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', lineHeight: 1.9, marginBottom: '16px' }}>
                                                 {getContent('sambutan', 'sambutan_text_3', "Kami berkomitmen untuk membentuk generasi Qur'ani yang tidak hanya mampu membaca dan menghafal Al-Qur'an, tetapi juga memiliki akhlak mulia dan kecintaan yang mendalam terhadap ilmu agama. Dengan dukungan para pengajar yang berdedikasi dan lingkungan belajar yang kondusif, kami optimis dapat mewujudkan visi tersebut.")}
@@ -750,7 +750,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 Visi & Misi Kami
                             </h2>
                             <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '640px', margin: '0 auto', fontSize: '18px' }}>
-                                Landasan dan arah perjuangan Yayasan RQ Syababul Khair
+                                Landasan dan arah perjuangan Rumah Qur'an Syababul Khair
                             </p>
                         </div>
 
@@ -880,7 +880,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 Prestasi Membanggakan
                             </h2>
                             <p style={{ color: '#888', maxWidth: '640px', margin: '0 auto', fontSize: '18px' }}>
-                                Pencapaian santri-santri terbaik Yayasan RQ Syababul Khair
+                                Pencapaian santri-santri terbaik Rumah Qur'an Syababul Khair
                             </p>
                         </div>
 
@@ -900,7 +900,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                                 <Award size={20} color="#c8a951" />
                                                 <p style={{ color: '#c8a951', fontWeight: 600, fontSize: '14px', margin: 0, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Khatam 1 Juz</p>
                                             </div>
-                                            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: '4px 0 0' }}>Yayasan RQ Syababul Khair</p>
+                                            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: '4px 0 0' }}>Rumah Qur'an Syababul Khair</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1009,7 +1009,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 Dokumentasi Kegiatan
                             </h2>
                             <p style={{ color: '#888', maxWidth: '640px', margin: '0 auto', fontSize: '18px' }}>
-                                Momen-momen berharga dari kegiatan Yayasan RQ Syababul Khair
+                                Momen-momen berharga dari kegiatan Rumah Qur'an Syababul Khair
                             </p>
                         </div>
 
@@ -1159,7 +1159,7 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 {getContent('contact', 'contact_cta_title', 'Mari Bergabung Bersama Kami')}
                             </h2>
                             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', maxWidth: '640px', margin: '0 auto 40px', lineHeight: 1.7 }}>
-                                {getContent('contact', 'contact_cta_desc', "Daftarkan putra-putri Anda untuk belajar Al-Qur'an dan program keislaman lainnya di Yayasan RQ Syababul Khair. Bersama kita wujudkan generasi Qur'ani.")}
+                                {getContent('contact', 'contact_cta_desc', "Daftarkan putra-putri Anda untuk belajar Al-Qur'an dan program keislaman lainnya di Rumah Qur'an Syababul Khair. Bersama kita wujudkan generasi Qur'ani.")}
                             </p>
 
                             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
@@ -1220,11 +1220,11 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
                                 style={{ height: '32px', width: '32px', borderRadius: '50%', objectFit: 'cover' }}
                             />
                             <span style={{ color: 'rgba(255,255,255,0.8)', fontWeight: 600, fontSize: '14px' }}>
-                                Yayasan RQ Syababul Khair
+                                Rumah Qur'an Syababul Khair
                             </span>
                         </div>
                         <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px', margin: 0, textAlign: 'center' }}>
-                            &copy; {new Date().getFullYear()} Yayasan RQ Syababul Khair. Dibuat dengan ❤️ untuk pendidikan Al-Qur'an.
+                            &copy; {new Date().getFullYear()} Rumah Qur'an Syababul Khair. Dibuat dengan ❤️ untuk pendidikan Al-Qur'an.
                         </p>
                         <Link
                             href="/login"
@@ -1239,3 +1239,4 @@ export default function ProfilYayasan({ canRegister, profileContents = {} }: Pro
         </>
     );
 }
+

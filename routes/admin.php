@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\AcademicYearController;
+use App\Http\Controllers\Admin\AchievementPostController;
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\BackupController;
 use App\Http\Controllers\Admin\BehavioralNoteController;
 use App\Http\Controllers\Admin\ClassGroupController;
 use App\Http\Controllers\Admin\ClassPromotionController;
 use App\Http\Controllers\Admin\ExtracurricularController;
+use App\Http\Controllers\Admin\GalleryPostController;
 use App\Http\Controllers\Admin\HomeroomNoteController;
 use App\Http\Controllers\Admin\KkmController;
 use App\Http\Controllers\Admin\ReportCardController;
@@ -34,6 +36,22 @@ Route::middleware(['auth', 'verified', 'can:admin'])
         Route::put('profile-content/{profileContent}', [ProfileContentController::class, 'update'])->name('profile-content.update');
         Route::delete('profile-content/{profileContent}', [ProfileContentController::class, 'destroy'])->name('profile-content.destroy');
         Route::post('profile-content/{profileContent}/toggle-active', [ProfileContentController::class, 'toggleActive'])->name('profile-content.toggle-active');
+
+        // Gallery Posts (Dokumentasi Kegiatan)
+        Route::get('gallery-posts', [GalleryPostController::class, 'index'])->name('gallery-posts.index');
+        Route::get('gallery-posts/create', [GalleryPostController::class, 'create'])->name('gallery-posts.create');
+        Route::post('gallery-posts', [GalleryPostController::class, 'store'])->name('gallery-posts.store');
+        Route::get('gallery-posts/{galleryPost}/edit', [GalleryPostController::class, 'edit'])->name('gallery-posts.edit');
+        Route::put('gallery-posts/{galleryPost}', [GalleryPostController::class, 'update'])->name('gallery-posts.update');
+        Route::delete('gallery-posts/{galleryPost}', [GalleryPostController::class, 'destroy'])->name('gallery-posts.destroy');
+
+        // Achievement Posts (Prestasi Membanggakan)
+        Route::get('achievement-posts', [AchievementPostController::class, 'index'])->name('achievement-posts.index');
+        Route::get('achievement-posts/create', [AchievementPostController::class, 'create'])->name('achievement-posts.create');
+        Route::post('achievement-posts', [AchievementPostController::class, 'store'])->name('achievement-posts.store');
+        Route::get('achievement-posts/{achievementPost}/edit', [AchievementPostController::class, 'edit'])->name('achievement-posts.edit');
+        Route::put('achievement-posts/{achievementPost}', [AchievementPostController::class, 'update'])->name('achievement-posts.update');
+        Route::delete('achievement-posts/{achievementPost}', [AchievementPostController::class, 'destroy'])->name('achievement-posts.destroy');
 
         // Students
         Route::get('students', [StudentController::class, 'index'])->name('students.index');
@@ -167,3 +185,4 @@ Route::middleware(['auth', 'verified', 'can:admin'])
         Route::put('behavioral-notes/{behavioralNote}', [BehavioralNoteController::class, 'update'])->name('behavioral-notes.update');
         Route::delete('behavioral-notes/{behavioralNote}', [BehavioralNoteController::class, 'destroy'])->name('behavioral-notes.destroy');
     });
+

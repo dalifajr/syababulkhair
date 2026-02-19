@@ -1,4 +1,6 @@
 import ProfileContentController from './ProfileContentController'
+import GalleryPostController from './GalleryPostController'
+import AchievementPostController from './AchievementPostController'
 import StudentController from './StudentController'
 import SubjectController from './SubjectController'
 import ClassGroupController from './ClassGroupController'
@@ -18,6 +20,8 @@ import BackupController from './BackupController'
 import BehavioralNoteController from './BehavioralNoteController'
 const Admin = {
     ProfileContentController: Object.assign(ProfileContentController, ProfileContentController),
+GalleryPostController: Object.assign(GalleryPostController, GalleryPostController),
+AchievementPostController: Object.assign(AchievementPostController, AchievementPostController),
 StudentController: Object.assign(StudentController, StudentController),
 SubjectController: Object.assign(SubjectController, SubjectController),
 ClassGroupController: Object.assign(ClassGroupController, ClassGroupController),
